@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Threading;
@@ -65,10 +65,8 @@ namespace Tests
         [Fact]
         public void PowerPersonalityPropertyDoesNotThrow()
         {
-            Assert.DoesNotThrow(() =>
-            {
-                PowerPersonality pp = PowerManager.PowerPersonality;
-            });
+            var exception = Record.Exception(() => PowerManager.PowerPersonality);
+            Assert.Null(exception);
         }
 
         [Theory(Skip = "Event dependent property does not return before timeout on some computers.")]

@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System.Collections.Generic;
 using System.Reflection;
@@ -11,7 +11,7 @@ namespace Tests
     public class KnownFolderHelperTests
     {
         [Theory]
-        [PropertyData("KnownFoldersFromReflection")]
+        [MemberData("KnownFoldersFromReflection")]
         public void FromPathNameTest(IKnownFolder folder)
         {
             IKnownFolder test = KnownFolderHelper.FromPath(folder.Path);
@@ -19,7 +19,7 @@ namespace Tests
         }
 
         [Theory]
-        [PropertyData("KnownFoldersFromReflection")]
+        [MemberData("KnownFoldersFromReflection")]
         public void FromParsingNameTest(IKnownFolder folder)
         {
             IKnownFolder test = KnownFolderHelper.FromParsingName(folder.ParsingName);
@@ -27,7 +27,7 @@ namespace Tests
         }
 
         [Theory]
-        [PropertyData("KnownFoldersFromReflection")]
+        [MemberData("KnownFoldersFromReflection")]
         public void FromCanonicalNameTest(IKnownFolder folder)
         {
             IKnownFolder test = KnownFolderHelper.FromCanonicalName(folder.CanonicalName);

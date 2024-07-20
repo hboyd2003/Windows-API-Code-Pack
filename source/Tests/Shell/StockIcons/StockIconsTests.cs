@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Reflection;
 using Microsoft.WindowsAPICodePack.Shell;
@@ -19,11 +19,9 @@ namespace Tests
             foreach (PropertyInfo info in infos)
             {
                 if (info.PropertyType == typeof(StockIcon))
-                {                    
-                    Assert.DoesNotThrow(new Assert.ThrowsDelegate(() =>
-                    {
-                        StockIcon test = (StockIcon)info.GetValue(icons, null);
-                    }));
+                {
+                    var exception = Record.Exception(() => (StockIcon)info.GetValue(icons, null));
+                    Assert.Null(exception);
                 }
             }
         }
