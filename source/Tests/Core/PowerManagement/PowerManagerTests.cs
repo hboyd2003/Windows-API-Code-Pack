@@ -1,187 +1,154 @@
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 
-using System;
 using System.Threading;
 using Microsoft.WindowsAPICodePack.ApplicationServices;
 using Xunit;
-using Xunit.Extensions;
 
-namespace Tests
+namespace Tests;
+
+public class PowerManagerTests
 {
-    public class PowerManagerTests
+    [Fact]
+    public void BatteryLifePercentIsValid()
     {
-        [Fact]
-        public void BatteryLifePercentIsValid()
-        {
-            Assert.InRange<int>(PowerManager.BatteryLifePercent, 0, 100);
-        }
+        Assert.InRange(PowerManager.BatteryLifePercent, 0, 100);
+    }
 
-        [Theory]
-        [InlineData(true)]
-        [InlineData(false)]
-        public void MonitorRequiredPropertyWorks(bool newValue)
-        {
-            bool originalValue = PowerManager.MonitorRequired;
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public void MonitorRequiredPropertyWorks(bool newValue)
+    {
+        var originalValue = PowerManager.MonitorRequired;
 
-            PowerManager.MonitorRequired = newValue;
-            Assert.Equal<bool>(newValue, PowerManager.MonitorRequired);
+        PowerManager.MonitorRequired = newValue;
+        Assert.Equal(newValue, PowerManager.MonitorRequired);
 
-            PowerManager.MonitorRequired = originalValue;
-        }
+        PowerManager.MonitorRequired = originalValue;
+    }
 
-        [Theory]
-        [InlineData(true)]
-        [InlineData(false)]
-        public void RequestBlockSleepPropertyWorks(bool newValue)
-        {
-            bool originalValue = PowerManager.RequestBlockSleep;
+    [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public void RequestBlockSleepPropertyWorks(bool newValue)
+    {
+        var originalValue = PowerManager.RequestBlockSleep;
 
-            PowerManager.RequestBlockSleep = newValue;
-            Assert.Equal<bool>(newValue, PowerManager.RequestBlockSleep);
+        PowerManager.RequestBlockSleep = newValue;
+        Assert.Equal(newValue, PowerManager.RequestBlockSleep);
 
-            PowerManager.RequestBlockSleep = originalValue;
-        }
+        PowerManager.RequestBlockSleep = originalValue;
+    }
 
-        [Theory]
-        [InlineData(true, PowerSource.AC)]
-        [InlineData(false, PowerSource.Battery)]
-        public void PowerSourceCorrespondsToAcOnlineProperty(bool acOnlineState, PowerSource powerSourceState)
-        {
-            Assert.Equal<bool>(
-                acOnlineState == PowerManager.GetCurrentBatteryState().ACOnline,
-                powerSourceState == PowerManager.PowerSource);
-        }
+    [Theory]
+    [InlineData(true, PowerSource.AC)]
+    [InlineData(false, PowerSource.Battery)]
+    public void PowerSourceCorrespondsToAcOnlineProperty(bool acOnlineState, PowerSource powerSourceState)
+    {
+        Assert.Equal(
+            acOnlineState == PowerManager.GetCurrentBatteryState().ACOnline,
+            powerSourceState == PowerManager.PowerSource);
+    }
 
-        [Theory]
-        [InlineData(true, PowerSource.Ups)]
-        public void PowerSourceCorrespondsToIsUpsPresentProperty(bool isUpsPresentState, PowerSource powerSourceState)
-        {
-            // BUG: It is strange that IsUpsPresent is exposed on PM, while ACOnline is exposed on the BatteryState property
-            Assert.Equal<bool>(
-                isUpsPresentState == PowerManager.IsUpsPresent,
-                powerSourceState == PowerManager.PowerSource);
-        }
+    [Theory]
+    [InlineData(true, PowerSource.Ups)]
+    public void PowerSourceCorrespondsToIsUpsPresentProperty(bool isUpsPresentState, PowerSource powerSourceState)
+    {
+        // BUG: It is strange that IsUpsPresent is exposed on PM, while ACOnline is exposed on the BatteryState property
+        Assert.Equal(
+            isUpsPresentState == PowerManager.IsUpsPresent,
+            powerSourceState == PowerManager.PowerSource);
+    }
 
-        [Fact]
-        public void PowerPersonalityPropertyDoesNotThrow()
-        {
-            var exception = Record.Exception(() => PowerManager.PowerPersonality);
-            Assert.Null(exception);
-        }
+    [Fact]
+    public void PowerPersonalityPropertyDoesNotThrow()
+    {
+        var exception = Record.Exception(() => PowerManager.PowerPersonality);
+        Assert.Null(exception);
+    }
 
-        [Theory(Skip = "Event dependent property does not return before timeout on some computers.")]
-        [InlineData(true, true)]
-        // [InlineData(false, false)] // BUG: Possible bug
-        public void IsMonitorOnPropertyWorks(bool monitorRequired, bool expectedIsMonitorOn)
-        {
-            bool monitorRequiredOriginal = PowerManager.MonitorRequired;
+    [Theory(Skip = "Event dependent property does not return before timeout on some computers.")]
+    [InlineData(true, true)]
+    // [InlineData(false, false)] // BUG: Possible bug
+    public void IsMonitorOnPropertyWorks(bool monitorRequired, bool expectedIsMonitorOn)
+    {
+        var monitorRequiredOriginal = PowerManager.MonitorRequired;
 
-            PowerManager.MonitorRequired = monitorRequired;
-            Assert.Equal<bool>(expectedIsMonitorOn, PowerManager.IsMonitorOn);
+        PowerManager.MonitorRequired = monitorRequired;
+        Assert.Equal(expectedIsMonitorOn, PowerManager.IsMonitorOn);
 
-            PowerManager.MonitorRequired = monitorRequiredOriginal;
-        }
+        PowerManager.MonitorRequired = monitorRequiredOriginal;
+    }
 
-        // TODO: Remove the skip attribute when test is complete.
-        [Theory(Skip = "Not Implemented")]
-        [InlineData(true)]
-        [InlineData(false)]
-        public void IsMonitorOnChangedEventWorks(bool isMonitorOnValueToSet)
-        {
-            bool eventFired = false;
-            PowerManager.IsMonitorOnChanged += new EventHandler(
-                (object sender, EventArgs args) =>
-                {
-                    eventFired = true;
-                });
+    // TODO: Remove the skip attribute when test is complete.
+    [Theory(Skip = "Not Implemented")]
+    [InlineData(true)]
+    [InlineData(false)]
+    public void IsMonitorOnChangedEventWorks(bool isMonitorOnValueToSet)
+    {
+        var eventFired = false;
+        PowerManager.IsMonitorOnChanged += (sender, args) => { eventFired = true; };
 
-            // TODO: Fire PowerManager.IsMonitorOnChanged event
+        // TODO: Fire PowerManager.IsMonitorOnChanged event
 
-            int secTimeout = 5; //wait 5 seconds for event to be fired.
-            for (int i = 0; i < secTimeout * 10 && !eventFired; i++)
-            {
-                Thread.Sleep(100);
-            }
+        var secTimeout = 5; //wait 5 seconds for event to be fired.
+        for (var i = 0; i < secTimeout * 10 && !eventFired; i++) Thread.Sleep(100);
 
-            Assert.True(eventFired);
+        Assert.True(eventFired);
+    }
 
-        }
+    // TODO: Remove the skip attribute when test is complete.
+    [Theory(Skip = "Not Implemented")]
+    [InlineData(PowerPersonality.Automatic)]
+    [InlineData(PowerPersonality.HighPerformance)]
+    [InlineData(PowerPersonality.PowerSaver)]
+    public void PowerPersonalityChangedEventWorks(PowerPersonality powerPersonalityToSet)
+    {
+        var original = PowerManager.PowerPersonality;
+        var eventFired = false;
 
-        // TODO: Remove the skip attribute when test is complete.
-        [Theory(Skip = "Not Implemented")]
-        [InlineData(PowerPersonality.Automatic)]
-        [InlineData(PowerPersonality.HighPerformance)]
-        [InlineData(PowerPersonality.PowerSaver)]
-        public void PowerPersonalityChangedEventWorks(PowerPersonality powerPersonalityToSet)
-        {
-            PowerPersonality original = PowerManager.PowerPersonality;
-            bool eventFired = false;
+        PowerManager.PowerPersonalityChanged += (sender, e) => { eventFired = true; };
 
-            PowerManager.PowerPersonalityChanged += new System.EventHandler(
-                (object sender, EventArgs e) =>
-                {
-                    eventFired = true;
-                }
-            );
+        // TODO: Change PowerManager.PowerPersonality, it is readonly.
 
-            // TODO: Change PowerManager.PowerPersonality, it is readonly.
+        var secTimeout = 5; //wait 5 seconds for event to be fired.
+        for (var i = 0; i < secTimeout * 10 && !eventFired; i++) Thread.Sleep(100);
 
-            int secTimeout = 5; //wait 5 seconds for event to be fired.
-            for (int i = 0; i < secTimeout * 10 && !eventFired; i++)
-            {
-                Thread.Sleep(100);
-            }
+        // TODO: PowerManager.PowerPersonality = original;
 
-            // TODO: PowerManager.PowerPersonality = original;
+        Assert.True(eventFired);
+    }
 
-            Assert.True(eventFired);
-        }
+    // TODO: Remove skip attribute when test is complete.
+    [Theory(Skip = "Not Implemented")]
+    [InlineData(PowerSource.AC)]
+    [InlineData(PowerSource.Battery)]
+    [InlineData(PowerSource.Ups)]
+    public void PowerSourceChangedEventWorks(PowerSource powerSourceToSet)
+    {
+        var eventFired = false;
+        PowerManager.PowerSourceChanged += (sender, args) => { eventFired = true; };
 
-        // TODO: Remove skip attribute when test is complete.
-        [Theory(Skip = "Not Implemented")]
-        [InlineData(PowerSource.AC)]
-        [InlineData(PowerSource.Battery)]
-        [InlineData(PowerSource.Ups)]
-        public void PowerSourceChangedEventWorks(PowerSource powerSourceToSet)
-        {
-            bool eventFired = false;
-            PowerManager.PowerSourceChanged += new EventHandler(
-                (object sender, EventArgs args) =>
-                {
-                    eventFired = true;
-                });
+        // TODO: Fire Powermanager.PowerSourceChanged event.
 
-            // TODO: Fire Powermanager.PowerSourceChanged event.
+        var secTimeout = 5; //wait 5 seconds for event to be fired.
+        for (var i = 0; i < secTimeout * 10 && !eventFired; i++) Thread.Sleep(100);
 
-            int secTimeout = 5; //wait 5 seconds for event to be fired.
-            for (int i = 0; i < secTimeout * 10 && !eventFired; i++)
-            {
-                Thread.Sleep(100);
-            }
+        Assert.True(eventFired);
+    }
 
-            Assert.True(eventFired);
-        }
+    // TODO: Remove skip attribute when test is complete.
+    [Fact(Skip = "Not Implemented")]
+    public void SystemBusyChangedEventWorks()
+    {
+        var eventFired = false;
+        PowerManager.SystemBusyChanged += (sender, args) => { eventFired = true; };
 
-        // TODO: Remove skip attribute when test is complete.
-        [Fact(Skip = "Not Implemented")]
-        public void SystemBusyChangedEventWorks()
-        {
-            bool eventFired = false;
-            PowerManager.SystemBusyChanged += new EventHandler(
-                (object sender, EventArgs args) =>
-                {
-                    eventFired = true;
-                });
+        // TODO: Fire PowerManager.SystemBusyChanged event.
 
-            // TODO: Fire PowerManager.SystemBusyChanged event.
+        var secTimeout = 5; //wait 5 seconds for event to be fired.
+        for (var i = 0; i < secTimeout * 10 && !eventFired; i++) Thread.Sleep(100);
 
-            int secTimeout = 5; //wait 5 seconds for event to be fired.
-            for (int i = 0; i < secTimeout * 10 && !eventFired; i++)
-            {
-                Thread.Sleep(100);
-            }
-
-            Assert.True(eventFired);
-        }
+        Assert.True(eventFired);
     }
 }

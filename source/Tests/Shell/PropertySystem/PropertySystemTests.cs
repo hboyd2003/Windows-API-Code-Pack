@@ -1,8 +1,6 @@
-﻿
-namespace Tests
+﻿namespace Tests;
+
+public class PropertySystemTests
 {
-    public class PropertySystemTests
-    {
-        // TODO: Add tests.
-    }
+    // TODO: Add tests.
 }

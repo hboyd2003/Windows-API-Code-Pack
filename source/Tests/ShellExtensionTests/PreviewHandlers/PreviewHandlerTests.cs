@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿namespace Tests.ShellExtensions;
 
-namespace Tests.ShellExtensions
+public class PreviewHandlerTests
 {
-    public class PreviewHandlerTests
-    {
-        // TODO: Rewrite tests
-    }
+    // TODO: Rewrite tests
 }

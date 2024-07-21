@@ -1,9 +1,8 @@
 ﻿// Copyright (c) Microsoft Corporation.  All rights reserved.
 
-namespace Tests
+namespace Tests;
+
+internal class Accelerometer3DTests
 {
-    class Accelerometer3DTests
-    {
-        // TODO: Add tests
-    }
+    // TODO: Add tests
 }

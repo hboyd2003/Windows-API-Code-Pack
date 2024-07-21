@@ -4,60 +4,61 @@ using System.Reflection;
 using Microsoft.WindowsAPICodePack.Shell;
 using Xunit;
 
-namespace Tests
+namespace Tests;
+
+public class StockIconsTests
 {
-    public class StockIconsTests
+    [Fact]
+    public void StockIconsNotNull()
     {
-        [Fact]
-        public void StockIconsNotNull()
-        {
-            PropertyInfo[] infos = typeof(StockIcons).GetType().GetProperties(BindingFlags.Public);
+        var infos = typeof(StockIcons).GetType().GetProperties(BindingFlags.Public);
 
-            // BUG: This (StockIcons) doesn't follow the same pattern as most of the other factory style patterned classes?
-            StockIcons icons = new StockIcons();
-            
-            foreach (PropertyInfo info in infos)
+        // BUG: This (StockIcons) doesn't follow the same pattern as most of the other factory style patterned classes?
+        var icons = new StockIcons();
+
+        foreach (var info in infos)
+            if (info.PropertyType == typeof(StockIcon))
             {
-                if (info.PropertyType == typeof(StockIcon))
-                {
-                    var exception = Record.Exception(() => (StockIcon)info.GetValue(icons, null));
-                    Assert.Null(exception);
-                }
+                var exception = Record.Exception(() => (StockIcon)info.GetValue(icons, null));
+                Assert.Null(exception);
             }
-        }
+    }
 
-        [Fact] 
-        public void StockIconsContainedInAllCollection()
+    [Fact]
+    public void StockIconsContainedInAllCollection()
+    {
+        // TODO: Redesign test, this is a pretty redundant test with the way the class is designed.
+
+        var icons = new StockIcons();
+
+        var infos = typeof(StockIcons).GetType().GetProperties(BindingFlags.Public);
+        foreach (var info in infos)
         {
-            // TODO: Redesign test, this is a pretty redundant test with the way the class is designed.
+            if (info.PropertyType != typeof(StockIcon)) continue;
 
-            StockIcons icons = new StockIcons();
-
-            PropertyInfo[] infos = typeof(StockIcons).GetType().GetProperties(BindingFlags.Public);
-            foreach (var info in infos)
+            StockIcon icon = null;
+            try
             {
-                if (info.PropertyType != typeof(StockIcon)) continue;
-
-                StockIcon icon = null;
-                try
-                {
-                    //this will throw an exception if the icon does not exist on the system
-                    icon = (StockIcon)info.GetValue(icons, null);
-                }
-                catch { continue; }
-                
-                Assert.Contains<StockIcon>(icon, icons.AllStockIcons);
+                //this will throw an exception if the icon does not exist on the system
+                icon = (StockIcon)info.GetValue(icons, null);
             }
+            catch
+            {
+                continue;
+            }
+
+            Assert.Contains(icon, icons.AllStockIcons);
         }
+    }
 
-        [Fact]
-        public void VerifyAllStockIconsArePropertized()
-        {
-            PropertyInfo[] infos = typeof(StockIcons).GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+    [Fact]
+    public void VerifyAllStockIconsArePropertized()
+    {
+        var infos = typeof(StockIcons).GetProperties(BindingFlags.Public | BindingFlags.NonPublic |
+                                                     BindingFlags.Instance);
 
-            int count = infos.Count(x => x.PropertyType == typeof(StockIcon));
+        var count = infos.Count(x => x.PropertyType == typeof(StockIcon));
 
-            Assert.Equal(count, Enum.GetValues(typeof(StockIconIdentifier)).Length);
-        }
+        Assert.Equal(count, Enum.GetValues(typeof(StockIconIdentifier)).Length);
     }
 }

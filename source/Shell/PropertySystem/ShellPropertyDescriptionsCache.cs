@@ -2,35 +2,31 @@
 
 using System.Collections.Generic;
 
-namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem
+namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem;
+
+internal class ShellPropertyDescriptionsCache
 {
-    internal class ShellPropertyDescriptionsCache
+    private static ShellPropertyDescriptionsCache cacheInstance;
+
+    private readonly IDictionary<PropertyKey, ShellPropertyDescription> propsDictionary;
+
+    private ShellPropertyDescriptionsCache()
     {
-        private static ShellPropertyDescriptionsCache cacheInstance;
+        propsDictionary = new Dictionary<PropertyKey, ShellPropertyDescription>();
+    }
 
-        private readonly IDictionary<PropertyKey, ShellPropertyDescription> propsDictionary;
-
-        private ShellPropertyDescriptionsCache() => propsDictionary = new Dictionary<PropertyKey, ShellPropertyDescription>();
-
-        public static ShellPropertyDescriptionsCache Cache
+    public static ShellPropertyDescriptionsCache Cache
+    {
+        get
         {
-            get
-            {
-                if (cacheInstance == null)
-                {
-                    cacheInstance = new ShellPropertyDescriptionsCache();
-                }
-                return cacheInstance;
-            }
+            if (cacheInstance == null) cacheInstance = new ShellPropertyDescriptionsCache();
+            return cacheInstance;
         }
+    }
 
-        public ShellPropertyDescription GetPropertyDescription(PropertyKey key)
-        {
-            if (!propsDictionary.ContainsKey(key))
-            {
-                propsDictionary.Add(key, new ShellPropertyDescription(key));
-            }
-            return propsDictionary[key];
-        }
+    public ShellPropertyDescription GetPropertyDescription(PropertyKey key)
+    {
+        if (!propsDictionary.ContainsKey(key)) propsDictionary.Add(key, new ShellPropertyDescription(key));
+        return propsDictionary[key];
     }
 }

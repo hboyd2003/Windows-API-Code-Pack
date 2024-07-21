@@ -1,9 +1,8 @@
 ﻿// Copyright (c) Microsoft Corporation.  All rights reserved.
 
-namespace Tests
+namespace Tests;
+
+public class AmbientLightSensorTests
 {
-    public class AmbientLightSensorTests
-    {
-        // TODO: Add Tests
-    }
+    // TODO: Add Tests
 }

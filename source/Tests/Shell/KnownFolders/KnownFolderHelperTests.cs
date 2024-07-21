@@ -4,62 +4,57 @@ using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.WindowsAPICodePack.Shell;
 using Xunit;
-using Xunit.Extensions;
 
-namespace Tests
+namespace Tests;
+
+public class KnownFolderHelperTests
 {
-    public class KnownFolderHelperTests
+    public static IEnumerable<object[]> KnownFoldersFromReflection
     {
-        [Theory]
-        [MemberData("KnownFoldersFromReflection")]
-        public void FromPathNameTest(IKnownFolder folder)
+        get
         {
-            IKnownFolder test = KnownFolderHelper.FromPath(folder.Path);
-            Assert.True(folder.FolderId == test.FolderId);
-        }
-
-        [Theory]
-        [MemberData("KnownFoldersFromReflection")]
-        public void FromParsingNameTest(IKnownFolder folder)
-        {
-            IKnownFolder test = KnownFolderHelper.FromParsingName(folder.ParsingName);
-            Assert.True(folder.FolderId == test.FolderId);
-        }
-
-        [Theory]
-        [MemberData("KnownFoldersFromReflection")]
-        public void FromCanonicalNameTest(IKnownFolder folder)
-        {
-            IKnownFolder test = KnownFolderHelper.FromCanonicalName(folder.CanonicalName);
-            Assert.True(folder.FolderId == test.FolderId);
-        }
-
-        public static IEnumerable<object[]> KnownFoldersFromReflection
-        {
-            get
-            {
-                PropertyInfo[] staticKnownFolders = typeof(KnownFolders).GetProperties(BindingFlags.Static | BindingFlags.Public);
-                foreach (PropertyInfo info in staticKnownFolders)
+            var staticKnownFolders = typeof(KnownFolders).GetProperties(BindingFlags.Static | BindingFlags.Public);
+            foreach (var info in staticKnownFolders)
+                if (info.PropertyType == typeof(IKnownFolder))
                 {
-                    if (info.PropertyType == typeof(IKnownFolder))
+                    IKnownFolder folder = null;
+                    try
                     {
-                        IKnownFolder folder = null;
-                        try
-                        {
-                            // the exception this can raise is caused by the path of the known folder
-                            // not being found.
-                            folder = (IKnownFolder)info.GetValue(null, null);
-                        }
-                        catch
-                        {
-                            continue;
-                        }
-
-                        yield return new object[] { folder };
+                        // the exception this can raise is caused by the path of the known folder
+                        // not being found.
+                        folder = (IKnownFolder)info.GetValue(null, null);
                     }
-                }
-            }
-        }
+                    catch
+                    {
+                        continue;
+                    }
 
+                    yield return new object[] { folder };
+                }
+        }
+    }
+
+    [Theory]
+    [MemberData("KnownFoldersFromReflection")]
+    public void FromPathNameTest(IKnownFolder folder)
+    {
+        var test = KnownFolderHelper.FromPath(folder.Path);
+        Assert.True(folder.FolderId == test.FolderId);
+    }
+
+    [Theory]
+    [MemberData("KnownFoldersFromReflection")]
+    public void FromParsingNameTest(IKnownFolder folder)
+    {
+        var test = KnownFolderHelper.FromParsingName(folder.ParsingName);
+        Assert.True(folder.FolderId == test.FolderId);
+    }
+
+    [Theory]
+    [MemberData("KnownFoldersFromReflection")]
+    public void FromCanonicalNameTest(IKnownFolder folder)
+    {
+        var test = KnownFolderHelper.FromCanonicalName(folder.CanonicalName);
+        Assert.True(folder.FolderId == test.FolderId);
     }
 }

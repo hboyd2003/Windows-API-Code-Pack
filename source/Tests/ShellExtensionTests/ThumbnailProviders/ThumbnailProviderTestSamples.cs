@@ -1,49 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Drawing;
+﻿using System.Drawing;
+using System.IO;
+using Microsoft.WindowsAPICodePack.Shell;
 using Microsoft.WindowsAPICodePack.ShellExtensions;
 
-namespace Tests.ShellExtensions
+namespace Tests.ShellExtensions;
+
+public class StreamThumbnailProviderTestSample : ThumbnailProvider, IThumbnailFromStream
 {
-    public class StreamThumbnailProviderTestSample : ThumbnailProvider, IThumbnailFromStream
+    #region IThumbnailFromStream Members
+
+    public Bitmap ConstructBitmap(Stream stream, int sideSize)
     {
-        #region IThumbnailFromStream Members
-
-        public Bitmap ConstructBitmap(System.IO.Stream stream, int sideSize)
-        {
-            return new Bitmap(sideSize, sideSize);
-        }
-
-        #endregion
+        return new Bitmap(sideSize, sideSize);
     }
 
-    public class FileThumbnailProviderTestSample : ThumbnailProvider, IThumbnailFromFile
+    #endregion
+}
+
+public class FileThumbnailProviderTestSample : ThumbnailProvider, IThumbnailFromFile
+{
+    #region IThumbnailFromFile Members
+
+    public Bitmap ConstructBitmap(FileInfo info, int sideSize)
     {
-
-        #region IThumbnailFromFile Members
-
-        public Bitmap ConstructBitmap(System.IO.FileInfo info, int sideSize)
-        {
-            return new Bitmap(sideSize, sideSize);
-        }
-
-        #endregion
+        return new Bitmap(sideSize, sideSize);
     }
 
-    public class ItemThumbnailProviderTestSample : ThumbnailProvider, IThumbnailFromShellObject
+    #endregion
+}
+
+public class ItemThumbnailProviderTestSample : ThumbnailProvider, IThumbnailFromShellObject
+{
+    #region IThumbnailFromShellObject Members
+
+    public Bitmap ConstructBitmap(ShellObject shellObject, int sideSize)
     {
-        #region IThumbnailFromShellObject Members
-
-        public Bitmap ConstructBitmap(Microsoft.WindowsAPICodePack.Shell.ShellObject shellObject, int sideSize)
-        {
-            return new Bitmap(sideSize, sideSize);
-        }
-
-        #endregion
+        return new Bitmap(sideSize, sideSize);
     }
 
-
-
+    #endregion
 }

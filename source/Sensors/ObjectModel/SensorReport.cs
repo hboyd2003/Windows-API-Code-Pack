@@ -1,80 +1,62 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 
 using System;
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace Microsoft.WindowsAPICodePack.Sensors
+namespace Microsoft.WindowsAPICodePack.Sensors;
+
+/// <summary>
+///     Represents all the data from a single sensor data report.
+/// </summary>
+public class SensorReport
 {
     /// <summary>
-    /// Represents all the data from a single sensor data report.
+    ///     Gets the time when the data report was generated.
     /// </summary>
-    public class SensorReport
+    [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly", MessageId = "TimeStamp")]
+    public DateTime TimeStamp { get; private set; }
+
+    /// <summary>
+    ///     Gets the data values in the report.
+    /// </summary>
+    public SensorData Values { get; private set; }
+
+    /// <summary>
+    ///     Gets the sensor that is the source of this data report.
+    /// </summary>
+    public Sensor Source { get; private set; }
+
+    #region implementation
+
+    internal static SensorReport FromNativeReport(Sensor originator, ISensorDataReport iReport)
     {
-        /// <summary>
-        /// Gets the time when the data report was generated.
-        /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly", MessageId = "TimeStamp")]
-        public DateTime TimeStamp
+        var systemTimeStamp = new SystemTime();
+        try
         {
-            get
-            {
-                return timeStamp;
-            }
+            iReport.GetTimestamp(out systemTimeStamp);
+        }
+        catch (COMException ex)
+        {
+            Trace.WriteLine(ex);
+            return null;
         }
 
-        /// <summary>
-        /// Gets the data values in the report.
-        /// </summary>
-        public SensorData Values
-        {
-            get
-            {
-                return sensorData;
-            }
-        }
+        // ReSharper disable once RedundantNameQualifier
+        var ftTimeStamp = new System.Runtime.InteropServices.ComTypes.FILETIME();
+        SensorNativeMethods.SystemTimeToFileTime(ref systemTimeStamp, out ftTimeStamp);
+        var lTimeStamp = ((long)ftTimeStamp.dwHighDateTime << 32) + ftTimeStamp.dwLowDateTime;
+        var timeStamp = DateTime.FromFileTime(lTimeStamp);
 
-        /// <summary>
-        /// Gets the sensor that is the source of this data report.
-        /// </summary>
-        public Sensor Source
-        {
-            get
-            {
-                return originator;
-            }
-        }
+        var sensorReport = new SensorReport();
+        sensorReport.Source = originator;
+        sensorReport.TimeStamp = timeStamp;
+        sensorReport.Values = SensorData.FromNativeReport(originator.internalObject, iReport);
 
-        #region implementation
-        private SensorData sensorData;
-        private Sensor originator;
-        private DateTime timeStamp = new DateTime();
-
-        internal static SensorReport FromNativeReport(Sensor originator, ISensorDataReport iReport)
-        {
-
-            SystemTime systemTimeStamp = new SystemTime();
-            try
-            {
-                iReport.GetTimestamp(out systemTimeStamp);
-            }
-            catch (System.Runtime.InteropServices.COMException ex)
-            {
-                System.Diagnostics.Trace.WriteLine(ex);
-                return null;
-            }
-            FILETIME ftTimeStamp = new FILETIME();
-            SensorNativeMethods.SystemTimeToFileTime(ref systemTimeStamp, out ftTimeStamp);
-            long lTimeStamp = (((long)ftTimeStamp.dwHighDateTime) << 32) + (long)ftTimeStamp.dwLowDateTime;
-            DateTime timeStamp = DateTime.FromFileTime(lTimeStamp);
-
-            SensorReport sensorReport = new SensorReport();
-            sensorReport.originator = originator;
-            sensorReport.timeStamp = timeStamp;
-            sensorReport.sensorData = SensorData.FromNativeReport(originator.internalObject, iReport);
-
-            return sensorReport;
-        }
-        #endregion
-
+        return sensorReport;
     }
+
+    #endregion
 }

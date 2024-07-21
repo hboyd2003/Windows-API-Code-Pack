@@ -1,49 +1,44 @@
 ﻿// Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 using Xunit;
-using Xunit.Extensions;
 
-namespace Tests
+namespace Tests;
+
+public class PropertyKeyTests
 {
-    public class PropertyKeyTests
+    [Theory]
+    [InlineData("00000000-0000-0000-0000-000000000000", 5)]
+    public void ConstructorWithGuid(string formatIdString, int propertyId)
     {
-        [Theory]
-        [InlineData("00000000-0000-0000-0000-000000000000", 5)]
-        public void ConstructorWithGuid(string formatIdString, int propertyId)
-        {
-            Guid formatId = new Guid(formatIdString);
-            PropertyKey pk = new PropertyKey(formatId, propertyId);
+        var formatId = new Guid(formatIdString);
+        var pk = new PropertyKey(formatId, propertyId);
 
-            Assert.Equal<Guid>(formatId, pk.FormatId);
-            Assert.Equal<int>(propertyId, pk.PropertyId);
-        }
+        Assert.Equal(formatId, pk.FormatId);
+        Assert.Equal(propertyId, pk.PropertyId);
+    }
 
-        [Theory]
-        [InlineData("00000000-0000-0000-0000-000000000000", 5)]
-        public void ConstructorWithString(string formatId, int propertyId)
-        {
-            PropertyKey pk = new PropertyKey(formatId, propertyId);
+    [Theory]
+    [InlineData("00000000-0000-0000-0000-000000000000", 5)]
+    public void ConstructorWithString(string formatId, int propertyId)
+    {
+        var pk = new PropertyKey(formatId, propertyId);
 
-            Assert.Equal<Guid>(new Guid(formatId), pk.FormatId);
-            Assert.Equal<int>(propertyId, pk.PropertyId);
-        }
+        Assert.Equal(new Guid(formatId), pk.FormatId);
+        Assert.Equal(propertyId, pk.PropertyId);
+    }
 
-        [Fact]
-        public void ToStringReturnsExpectedString()
-        {
-            Guid guid = new Guid("00000000-1111-2222-3333-000000000000");
-            int property = 1234;
+    [Fact]
+    public void ToStringReturnsExpectedString()
+    {
+        var guid = new Guid("00000000-1111-2222-3333-000000000000");
+        var property = 1234;
 
-            PropertyKey key = new PropertyKey(guid, property);
+        var key = new PropertyKey(guid, property);
 
-            Assert.Equal<string>(
-                "{" + guid.ToString() + "}, " + property.ToString(),
-                key.ToString());
-        }
+        Assert.Equal<string>(
+            "{" + guid + "}, " + property,
+            key.ToString());
     }
 }
