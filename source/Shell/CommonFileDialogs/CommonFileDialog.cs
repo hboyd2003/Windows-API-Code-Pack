@@ -169,7 +169,7 @@ namespace Microsoft.WindowsAPICodePack.Dialogs
         }
 
         /// <summary>
-        /// Sets the location ( <see cref="Microsoft.WindowsAPICodePack.Shell.ShellContainer">ShellContainer</see> used as a default if there
+        /// Sets the location (<see cref="Microsoft.WindowsAPICodePack.Shell.ShellContainer">ShellContainer</see>) used as a default if there
         /// is not a recently used folder value available.
         /// </summary>
         public ShellContainer DefaultDirectoryShellContainer
@@ -586,7 +586,7 @@ namespace Microsoft.WindowsAPICodePack.Dialogs
             GC.SuppressFinalize(this);
         }
 
-        /// <summary>Returns if change to the colleciton is allowed.</summary>
+        /// <summary>Returns if change to the collection is allowed.</summary>
         /// <returns>true if collection change is allowed.</returns>
         public virtual bool IsCollectionChangeAllowed() => true;
 
@@ -1094,7 +1094,7 @@ namespace Microsoft.WindowsAPICodePack.Dialogs
 
                 if (!args.Cancel)
                 {
-                    // Make sure all custom properties are sync'ed
+                    // Make sure all custom properties are synced
                     if (parent.Controls != null)
                     {
                         foreach (var control in parent.Controls)
@@ -1168,7 +1168,7 @@ namespace Microsoft.WindowsAPICodePack.Dialogs
                 // Process Menu
                 else if ((menu = control as CommonFileDialogMenu) != null)
                 {
-                    // Find the menu item that was clicked and invoke it's click event
+                    // Find the menu item that was clicked and invoke its click event
                     foreach (var item in menu.Items)
                     {
                         if (item.Id == dwIDItem)

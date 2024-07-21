@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Windows;
@@ -13,7 +13,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
     public class TabbedThumbnailBitmapRequestedEventArgs : TabbedThumbnailEventArgs
     {
         /// <summary>
-        /// Creates a Event Args for a TabbedThumbnailBitmapRequested event.
+        /// Creates an Event Args for a TabbedThumbnailBitmapRequested event.
         /// </summary>
         /// <param name="windowHandle">Window handle for the control/window related to the event</param>
         public TabbedThumbnailBitmapRequestedEventArgs(IntPtr windowHandle)
@@ -22,7 +22,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         }
 
         /// <summary>
-        /// Creates a Event Args for a TabbedThumbnailBitmapRequested event.
+        /// Creates an Event Args for a TabbedThumbnailBitmapRequested event.
         /// </summary>
         /// <param name="windowsControl">WPF Control (UIElement) related to the event</param>
         public TabbedThumbnailBitmapRequestedEventArgs(UIElement windowsControl)

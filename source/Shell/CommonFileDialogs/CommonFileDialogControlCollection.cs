@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell.Resources;
 using System;
@@ -20,7 +20,7 @@ namespace Microsoft.WindowsAPICodePack.Dialogs.Controls
         /// Defines the indexer that supports accessing controls by name.
         /// </summary>
         /// <remarks>
-        /// <para>Control names are case sensitive.</para>
+        /// <para>Control names are case-sensitive.</para>
         /// <para>This indexer is useful when the dialog is created in XAML
         /// rather than constructed in code.</para></remarks>
         ///<exception cref="System.ArgumentException">
@@ -55,9 +55,9 @@ namespace Microsoft.WindowsAPICodePack.Dialogs.Controls
             }
         }
 
-        /// <summary>Recursively searches for the control who's id matches the value passed in the <paramref name="id"/> parameter.</summary>
+        /// <summary>Recursively searches for the control whose id matches the value passed in the <paramref name="id"/> parameter.</summary>
         /// <param name="id">An integer containing the identifier of the control being searched for.</param>
-        /// <returns>A DialogControl who's id matches the value of the <paramref name="id"/> parameter.</returns>
+        /// <returns>A DialogControl whose id matches the value of the <paramref name="id"/> parameter.</returns>
         internal DialogControl GetControlbyId(int id) => GetSubControlbyId(Items.Cast<DialogControl>(), id);
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Microsoft.WindowsAPICodePack.Dialogs.Controls
         /// </summary>
         /// <param name="controlCollection">A Collection&lt;CommonFileDialogControl&gt;</param>
         /// <param name="id">An int containing the identifier of the control being searched for.</param>
-        /// <returns>A DialogControl who's Id matches the value of the <paramref name="id"/> parameter.</returns>
+        /// <returns>A DialogControl who's ID matches the value of the <paramref name="id"/> parameter.</returns>
         internal DialogControl GetSubControlbyId(IEnumerable<DialogControl> controlCollection, int id)
         {
             // if ctrlColl is null, it will throw in the foreach.
@@ -87,7 +87,7 @@ namespace Microsoft.WindowsAPICodePack.Dialogs.Controls
             return null;
         }
 
-        /// <summary>Inserts an dialog control at the specified index.</summary>
+        /// <summary>Inserts a dialog control at the specified index.</summary>
         /// <param name="index">The location to insert the control.</param>
         /// <param name="control">The item to insert.</param>
         /// <permission cref="System.InvalidOperationException">

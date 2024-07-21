@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using Microsoft.WindowsAPICodePack.Shell;
@@ -12,10 +12,10 @@ public class NavigationCompleteEventArgs : EventArgs
     public ShellObject NewLocation { get; set; }
 }
 
-/// <summary>Event argument for the NavigatinoFailed event</summary>
+/// <summary>Event argument for the NavigationFailed event</summary>
 public class NavigationFailedEventArgs : EventArgs
 {
-    /// <summary>The location the the browser would have navigated to.</summary>
+    /// <summary>The location the browser would have navigated to.</summary>
     public ShellObject FailedLocation { get; set; }
 }
 

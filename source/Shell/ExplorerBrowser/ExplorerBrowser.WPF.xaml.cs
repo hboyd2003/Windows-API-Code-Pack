@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Collections.ObjectModel;
@@ -695,7 +695,7 @@ public partial class ExplorerBrowser : UserControl, IDisposable
     }
 
     /// <summary>
-    ///     To avoid the 'Dispatcher processing has been suspended' InvalidOperationException on Win7, the ExplorerBorwser
+    ///     To avoid the 'Dispatcher processing has been suspended' InvalidOperationException on Win7, the ExplorerBrowser
     ///     native control is
     ///     initialized after this control is fully loaded.
     /// </summary>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows;
 
 namespace Microsoft.WindowsAPICodePack.Taskbar
@@ -9,13 +9,13 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
     public class TabbedThumbnailClosedEventArgs : TabbedThumbnailEventArgs
     {
         /// <summary>
-        /// Creates a Event Args for a specific tabbed thumbnail event.
+        /// Creates an Event Args for a specific tabbed thumbnail event.
         /// </summary>
         /// <param name="windowHandle">Window handle for the control/window related to the event</param>        
         public TabbedThumbnailClosedEventArgs(IntPtr windowHandle) : base(windowHandle) { }
 
         /// <summary>
-        /// Creates a Event Args for a specific tabbed thumbnail event.
+        /// Creates an Event Args for a specific tabbed thumbnail event.
         /// </summary>
         /// <param name="windowsControl">WPF Control (UIElement) related to the event</param>        
         public TabbedThumbnailClosedEventArgs(UIElement windowsControl) : base(windowsControl) { }

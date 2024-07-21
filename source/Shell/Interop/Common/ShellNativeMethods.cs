@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Runtime.InteropServices;
@@ -309,11 +309,11 @@ namespace Microsoft.WindowsAPICodePack.Shell
             Folder = 0x20000000,
 
             /// <summary>
-            /// The specified folders or file objects are part of the file system that is, they are files, directories, or root directories).
+            /// The specified folders or file objects are part of the file system (that is, they are files, directories, or root directories).
             /// </summary>
             FileSystem = 0x40000000,
 
-            /// <summary>The specified folders have subfolders = and are, therefore, expandable in the left pane of Windows Explorer).</summary>
+            /// <summary>The specified folders have subfolders = and are, therefore, expandable in the left pane of Windows Explorer.</summary>
             HasSubFolder = unchecked((int)0x80000000),
 
             /// <summary>This flag is a mask for the contents attributes.</summary>
@@ -388,7 +388,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
 
         internal enum ShellItemAttributeOptions
         {
-            // if multiple items and the attirbutes together.
+            // if multiple items and the attributes together.
             And = 0x00000001,
 
             // if multiple items or the attributes together.
@@ -401,7 +401,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
             Mask = 0x00000003,
 
             // Windows 7 and later. Examine all items in the array to compute the attributes. Note that this can result in poor performance
-            // over large arrays and therefore it should be used only when needed. Cases in which you pass this flag should be extremely rare.
+            // over large arrays, and therefore it should be used only when needed. Cases in which you pass this flag should be extremely rare.
             AllItems = 0x00004000
         }
 

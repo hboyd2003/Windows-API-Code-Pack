@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell.Resources;
 using System;
@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace Microsoft.WindowsAPICodePack.Shell
 {
-    /// <summary>An ennumerable list of ShellObjects</summary>
+    /// <summary>An enumerable list of ShellObjects</summary>
     public class ShellObjectCollection : IEnumerable, IDisposable, IList<ShellObject>
     {
         private readonly List<ShellObject> content = new List<ShellObject>();
@@ -24,7 +24,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
 
         /// <summary>Creates a ShellObject collection from an IShellItemArray</summary>
         /// <param name="iArray">IShellItemArray pointer</param>
-        /// <param name="readOnly">Indicates whether the collection shouldbe read-only or not</param>
+        /// <param name="readOnly">Indicates whether the collection should read-only or not</param>
         internal ShellObjectCollection(IShellItemArray iArray, bool readOnly)
         {
             this.readOnly = readOnly;
@@ -227,7 +227,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
             }
         }
 
-        /// <summary>Returns the index of a particualr shell object in the collection</summary>
+        /// <summary>Returns the index of a particular shell object in the collection</summary>
         /// <param name="item">The item to search for.</param>
         /// <returns>The index of the item found, or -1 if not found.</returns>
         public int IndexOf(ShellObject item) => content.IndexOf(item);

@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 using Microsoft.WindowsAPICodePack.Shell.Resources;
@@ -37,7 +37,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         }
 
         /// <summary>
-        /// Create a simple search folder. Once the appropiate parameters are set, the search folder can be enumerated to get the search results.
+        /// Create a simple search folder. Once the appropriate parameters are set, the search folder can be enumerated to get the search results.
         /// </summary>
         /// <param name="searchCondition">Specific condition on which to perform the search (property and expected value)</param>
         /// <param name="searchScopePath">List of folders/paths to perform the search on. These locations need to be indexed by the system.</param>

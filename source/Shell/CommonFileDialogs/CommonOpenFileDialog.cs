@@ -107,7 +107,7 @@ namespace Microsoft.WindowsAPICodePack.Dialogs
                 ICollection<ShellObject> resultItems = new Collection<ShellObject>();
 
                 // Loop through our existing list of filenames, and try to create a concrete type of ShellObject (e.g. ShellLibrary,
-                // FileSystemFolder, ShellFile, etc)
+                // FileSystemFolder, ShellFile, etc.)
                 foreach (var si in items)
                 {
                     resultItems.Add(ShellObjectFactory.Create(si));

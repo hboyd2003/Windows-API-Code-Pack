@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace Microsoft.WindowsAPICodePack.Dialogs
 {
     // Disable warning if a method declaration hides another inherited from a parent COM interface To successfully import a COM interface,
-    // all inherited methods need to be declared again with the exception of those already declared in "IUnknown"
+    // all inherited methods need to be declared again except for those already declared in "IUnknown"
 #pragma warning disable 0108
 
     [ComImport(),

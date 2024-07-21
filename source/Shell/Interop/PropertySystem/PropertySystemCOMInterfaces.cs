@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using MS.WindowsAPICodePack.Internal;
 using System;
@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem
 {
     // Disable warning if a method declaration hides another inherited from a parent COM interface To successfully import a COM interface,
-    // all inherited methods need to be declared again with the exception of those already declared in "IUnknown"
+    // all inherited methods need to be declared again except for those already declared in "IUnknown"
 #pragma warning disable 108
 
     [ComImport,
@@ -311,7 +311,7 @@ namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem
         [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
         HResult GetState(ref PropertyKey key, [Out] out PropertyStoreCacheState state);
 
-        /// <summary>Gets the valeu and state of a property in the cache</summary>
+        /// <summary>Gets the value and state of a property in the cache</summary>
         /// <param name="propKey"></param>
         /// <param name="pv"></param>
         /// <param name="state"></param>

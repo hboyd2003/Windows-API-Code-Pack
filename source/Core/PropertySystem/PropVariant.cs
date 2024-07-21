@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Collections.Generic;
@@ -242,7 +242,7 @@ public sealed class PropVariant : IDisposable
 
     [FieldOffset(8)] private readonly float _float;
 
-    /// <summary>Default constrcutor</summary>
+    /// <summary>Default constructor</summary>
     public PropVariant()
     {
         // left empty
@@ -713,7 +713,7 @@ public sealed class PropVariant : IDisposable
         Dispose();
     }
 
-    /// <summary>Provides an simple string representation of the contained data and type.</summary>
+    /// <summary>Provides a simple string representation of the contained data and type.</summary>
     /// <returns></returns>
     public override string ToString()
     {

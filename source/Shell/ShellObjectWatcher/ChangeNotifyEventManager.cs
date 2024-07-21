@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -75,7 +75,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
 
         public void Invoke(object sender, ShellObjectChangeTypes changeType, EventArgs args)
         {
-            // Removes FromInterrupt flag if pressent
+            // Removes FromInterrupt flag if present
             changeType = changeType & ~ShellObjectChangeTypes.FromInterrupt;
 
             foreach (var change in _changeOrder.Where(x => (x & changeType) != 0))

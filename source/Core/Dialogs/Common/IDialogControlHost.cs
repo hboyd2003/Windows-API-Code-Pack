@@ -21,7 +21,7 @@ public interface IDialogControlHost
     bool IsCollectionChangeAllowed();
 
     /// <summary>
-    ///     Handle notifications of individual child pseudo-controls' properties changing.. Prefilter should throw if the
+    ///     Handle notifications of individual child pseudo-controls' properties changing… Prefilter should throw if the
     ///     property cannot be
     ///     set in the dialog's current state. PostProcess should pass on changes to native control, if appropriate.
     /// </summary>

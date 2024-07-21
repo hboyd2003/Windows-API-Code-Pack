@@ -1,4 +1,4 @@
-﻿using MS.WindowsAPICodePack.Internal;
+using MS.WindowsAPICodePack.Internal;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -6,7 +6,7 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace Microsoft.WindowsAPICodePack.Shell.Interop
 {
-    /// <summary>Provides means by which to intiailze with a file.</summary>
+    /// <summary>Provides means by which to initialize with a file.</summary>
     [ComImport]
     [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     [Guid("b7d14566-0509-4cce-a71f-0a554233bd9b")]

@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using Microsoft.WindowsAPICodePack.Shell;
 
 namespace Microsoft.WindowsAPICodePack.ShellExtensions;
@@ -6,7 +6,7 @@ namespace Microsoft.WindowsAPICodePack.ShellExtensions;
 /// <summary>
 ///     This interface exposes the <see cref="Load" /> function for initializing the Preview Handler with a
 ///     <see cref="FileInfo" />. This
-///     interface can be used in conjunction with the other intialization interfaces, but only 1 will be accessed according
+///     interface can be used in conjunction with the other initialization interfaces, but only 1 will be accessed according
 ///     to the priorities
 ///     preset by the Windows Shell: <see cref="IPreviewFromStream" /><see cref="IPreviewFromShellObject" />
 ///     <see cref="IPreviewFromFile" />
@@ -21,7 +21,7 @@ public interface IPreviewFromFile
 /// <summary>
 ///     This interface exposes the <see cref="Load" /> function for initializing the Preview Handler with a
 ///     <see cref="ShellObject" />. This
-///     interface can be used in conjunction with the other intialization interfaces, but only 1 will be accessed according
+///     interface can be used in conjunction with the other initialization interfaces, but only 1 will be accessed according
 ///     to the priorities
 ///     preset by the Windows Shell: <see cref="IPreviewFromStream" /><see cref="IPreviewFromShellObject" />
 ///     <see cref="IPreviewFromFile" />
@@ -39,7 +39,7 @@ public interface IPreviewFromShellObject
 /// <summary>
 ///     This interface exposes the <see cref="Load" /> function for initializing the Preview Handler with a
 ///     <see cref="Stream" />. This
-///     interface can be used in conjunction with the other intialization interfaces, but only 1 will be accessed according
+///     interface can be used in conjunction with the other initialization interfaces, but only 1 will be accessed according
 ///     to the priorities
 ///     preset by the Windows Shell: <see cref="IPreviewFromStream" /><see cref="IPreviewFromShellObject" />
 ///     <see cref="IPreviewFromFile" />

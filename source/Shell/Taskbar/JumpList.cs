@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell;
 using Microsoft.WindowsAPICodePack.Shell.Resources;
@@ -21,15 +21,15 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// Create a JumpList for the application's taskbar button.
         /// </summary>
         /// <returns>A new JumpList that is associated with the app id of the main application window</returns>
-        /// <remarks>If there are any other child (top-level) windows for this application and they don't have
+        /// <remarks>If there are any other child (top-level) windows for this application, and they don't have
         /// a specific JumpList created for them, they all will share the same JumpList as the main application window.
-        /// In order to have a individual JumpList for a top-level window, use the overloaded method CreateJumpListForIndividualWindow.</remarks>
+        /// In order to have an individual JumpList for a top-level window, use the overloaded method CreateJumpListForIndividualWindow.</remarks>
         public static JumpList CreateJumpList() => new JumpList(TaskbarManager.Instance.ApplicationId);
 
         /// <summary>
         /// Create a JumpList for the application's taskbar button.
         /// </summary>
-        /// <param name="appId">Application Id for the individual window. This must be unique for each top-level window in order to have a individual JumpList.</param>
+        /// <param name="appId">Application ID for the individual window. This must be unique for each top-level window in order to have an individual JumpList.</param>
         /// <param name="windowHandle">Handle of the window associated with the new JumpList</param>
         /// <returns>A new JumpList that is associated with the specific window handle</returns>
         public static JumpList CreateJumpListForIndividualWindow(string appId, IntPtr windowHandle) => new JumpList(appId, windowHandle);
@@ -37,7 +37,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// <summary>
         /// Create a JumpList for the application's taskbar button.
         /// </summary>
-        /// <param name="appId">Application Id for the individual window. This must be unique for each top-level window in order to have a individual JumpList.</param>
+        /// <param name="appId">Application ID for the individual window. This must be unique for each top-level window in order to have an individual JumpList.</param>
         /// <param name="window">WPF Window associated with the new JumpList</param>
         /// <returns>A new JumpList that is associated with the specific WPF window</returns>
         public static JumpList CreateJumpListForIndividualWindow(string appId, System.Windows.Window window) => new JumpList(appId, window);
@@ -54,7 +54,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// <summary>
         /// Adds a collection of custom categories to the Taskbar jump list.
         /// </summary>
-        /// <param name="customCategories">The catagories to add to the jump list.</param>
+        /// <param name="customCategories">The categories to add to the jump list.</param>
         public void AddCustomCategories(params JumpListCustomCategory[] customCategories)
         {
             lock (syncLock)
@@ -119,7 +119,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// Gets the recommended number of items to add to the jump list.  
         /// </summary>
         /// <remarks>
-        /// This number doesn’t 
+        /// This number doesn't 
         /// imply or suggest how many items will appear on the jump list.  
         /// This number should only be used for reference purposes since
         /// the actual number of slots in the jump list can change after the last
@@ -187,7 +187,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// Creates a new instance of the JumpList class with the specified
         /// appId. The JumpList is associated with the main window of the application.
         /// </summary>
-        /// <param name="appID">Application Id to use for this instace.</param>
+        /// <param name="appID">Application ID to use for this instance.</param>
         internal JumpList(string appID)
             : this(appID, TaskbarManager.Instance.OwnerHandle)
         {
@@ -197,7 +197,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// Creates a new instance of the JumpList class with the specified
         /// appId. The JumpList is associated with the given WPF Window.
         /// </summary>
-        /// <param name="appID">Application Id to use for this instace.</param>
+        /// <param name="appID">Application ID to use for this instance.</param>
         /// <param name="window">WPF Window that is associated with this JumpList</param>
         internal JumpList(string appID, System.Windows.Window window)
             : this(appID, (new System.Windows.Interop.WindowInteropHelper(window)).Handle)
@@ -208,7 +208,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// Creates a new instance of the JumpList class with the specified
         /// appId. The JumpList is associated with the given window.
         /// </summary>
-        /// <param name="appID">Application Id to use for this instace.</param>
+        /// <param name="appID">Application ID to use for this instance.</param>
         /// <param name="windowHandle">Window handle for the window that is associated with this JumpList</param>
         private JumpList(string appID, IntPtr windowHandle)
         {

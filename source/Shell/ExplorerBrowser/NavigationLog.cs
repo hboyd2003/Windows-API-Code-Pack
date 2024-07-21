@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ public class ExplorerBrowserNavigationLog
 
     private readonly ExplorerBrowser parent;
 
-    /// <summary>The index into the Locations collection. -1 if the Locations colleciton is empty.</summary>
+    /// <summary>The index into the Locations collection. -1 if the Locations collection is empty.</summary>
     private int currentLocationIndex = -1;
 
     /// <summary>The pending navigation log action. null if the user is not navigating via the navigation log.</summary>
@@ -136,7 +136,7 @@ public class ExplorerBrowserNavigationLog
             var shellItemsEqual = result == 0;
             if (shellItemsEqual == false)
             {
-                // new location is different than traversal request, behave is if it never happened! remove history following
+                // new location is different from traversal request, behave is if it never happened! remove history following
                 // currentLocationIndex, append new item
                 if (currentLocationIndex < _locations.Count - 1)
                     _locations.RemoveRange(currentLocationIndex + 1, _locations.Count - (currentLocationIndex + 1));

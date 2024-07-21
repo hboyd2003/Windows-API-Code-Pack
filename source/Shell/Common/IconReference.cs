@@ -1,11 +1,11 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Resources;
 using System;
 
 namespace Microsoft.WindowsAPICodePack.Shell
 {
-    /// <summary>A refence to an icon resource</summary>
+    /// <summary>A reference to an icon resource</summary>
     public struct IconReference
     {
         private static readonly char[] commaSeparator = new char[] { ',' };
@@ -30,7 +30,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         }
 
         /// <summary>Overloaded constructor takes in the module name and resource id separated by a comma.</summary>
-        /// <param name="refPath">Reference path for the icon consiting of the module name and resource id.</param>
+        /// <param name="refPath">Reference path for the icon consisting of the module name and resource id.</param>
         public IconReference(string refPath)
             : this()
         {
@@ -66,7 +66,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
             }
         }
 
-        /// <summary>Reference to a specific icon within a EXE, DLL or icon file.</summary>
+        /// <summary>Reference to a specific icon within an EXE, DLL or icon file.</summary>
         public string ReferencePath
         {
             get => referencePath;
@@ -97,7 +97,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <summary>Implements the != (unequality) operator.</summary>
         /// <param name="icon1">First object to compare.</param>
         /// <param name="icon2">Second object to compare.</param>
-        /// <returns>True if icon1 does not equals icon1; false otherwise.</returns>
+        /// <returns>True if icon1 does not equal icon1; false otherwise.</returns>
         public static bool operator !=(IconReference icon1, IconReference icon2) => !(icon1 == icon2);
 
         /// <summary>Implements the == (equality) operator.</summary>

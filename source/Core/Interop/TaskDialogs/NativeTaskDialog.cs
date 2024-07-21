@@ -509,7 +509,7 @@ internal class NativeTaskDialog : IDisposable
         else if (IsOptionSet(TaskDialogNativeMethods.TaskDialogOptions.ShowMarqueeProgressBar))
         {
             // TDM_SET_PROGRESS_BAR_MARQUEE is necessary to cause the marquee to start animating. Note that this internal task dialog
-            // setting is round-tripped when the marquee is is set to different states, so it never has to be touched/sent again.
+            // setting is round-tripped when the marquee is set to different states, so it never has to be touched/sent again.
             SendMessageHelper(TaskDialogNativeMethods.TaskDialogMessages.SetProgressBarMarquee, 1, 0);
             UpdateProgressBarState(settings.ProgressBarState);
         }

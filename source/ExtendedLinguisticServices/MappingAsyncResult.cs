@@ -38,7 +38,7 @@ public class MappingAsyncResult : IAsyncResult, IDisposable
     /// <summary>Returns the result state.</summary>
     public object AsyncState => ResultState;
 
-    /// <summary>Gets the WaitHandle which will be notified when the opration completes (successfully or not).</summary>
+    /// <summary>Gets the WaitHandle which will be notified when the operation completes (successfully or not).</summary>
     public WaitHandle AsyncWaitHandle => _waitHandle;
 
     /// <summary>From MSDN: Most implementers of the IAsyncResult interface will not use this property and should return false.</summary>

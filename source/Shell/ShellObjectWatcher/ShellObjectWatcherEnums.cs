@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Microsoft.WindowsAPICodePack.Shell
 {
@@ -164,12 +164,12 @@ namespace Microsoft.WindowsAPICodePack.Shell
         AssociationChange = 0x08000000,
 
         /// <summary>
-        /// Specifies a combination of all of the disk event identifiers.
+        /// Specifies a combination of all the disk event identifiers.
         /// </summary>
         DiskEventsMask = 0x0002381F,
 
         /// <summary>
-        /// Specifies a combination of all of the global event identifiers.
+        /// Specifies a combination of all the global event identifiers.
         /// </summary>
         GlobalEventsMask = 0x0C0581E0,
 

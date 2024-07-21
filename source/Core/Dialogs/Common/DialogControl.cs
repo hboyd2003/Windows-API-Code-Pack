@@ -85,7 +85,7 @@ public abstract class DialogControl
 
     /// <summary>
     ///     Calls the hosting dialog, if it exists, to
-    ///     to indicate that a property has changed, and that
+    ///     indicate that a property has changed, and that
     ///     the dialog should do whatever is necessary
     ///     to propagate the change to the native control.
     ///     Note that if the dialog isn't set yet,

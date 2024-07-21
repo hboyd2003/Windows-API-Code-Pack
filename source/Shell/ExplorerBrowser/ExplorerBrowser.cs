@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Drawing;
@@ -42,7 +42,7 @@ public sealed class ExplorerBrowser :
 
     private ExplorerBrowserViewEvents viewEvents;
 
-    /// <summary>Initializes the ExplorerBorwser WinForms wrapper.</summary>
+    /// <summary>Initializes the ExplorerBrowser WinForms wrapper.</summary>
     public ExplorerBrowser()
     {
         NavigationOptions = new ExplorerBrowserNavigationOptions(this);
@@ -50,7 +50,7 @@ public sealed class ExplorerBrowser :
         NavigationLog = new ExplorerBrowserNavigationLog(this);
     }
 
-    /// <summary>Options that control how the content of the ExplorerBorwser looks</summary>
+    /// <summary>Options that control how the content of the ExplorerBrowser looks</summary>
     public ExplorerBrowserContentOptions ContentOptions { get; }
 
     /// <summary>The set of ShellObjects in the Explorer Browser</summary>
@@ -231,7 +231,7 @@ public sealed class ExplorerBrowser :
         return HResult.Ok;
     }
 
-    /// <summary>Controls the visibility of the explorer borwser panes</summary>
+    /// <summary>Controls the visibility of the explorer browser panes</summary>
     /// <param name="explorerPane">a guid identifying the pane</param>
     /// <param name="peps">the pane state desired</param>
     /// <returns></returns>
@@ -346,11 +346,11 @@ public sealed class ExplorerBrowser :
         return hr;
     }
 
-    /// <summary>Fires when the Items colection changes.</summary>
+    /// <summary>Fires when the Items collection changes.</summary>
     public event EventHandler ItemsChanged;
 
     /// <summary>
-    ///     Fires when a navigation has been 'completed': no NavigationPending listener has cancelled, and the ExplorerBorwser
+    ///     Fires when a navigation has been 'completed': no NavigationPending listener has cancelled, and the ExplorerBrowser
     ///     has created a
     ///     new view. The view will be populated with new items asynchronously, and ItemsChanged will be fired to reflect this
     ///     some time later.
@@ -370,7 +370,7 @@ public sealed class ExplorerBrowser :
     /// <summary>Fires when the SelectedItems collection changes.</summary>
     public event EventHandler SelectionChanged;
 
-    /// <summary>Fires when the ExplorerBorwser view has finished enumerating files.</summary>
+    /// <summary>Fires when the ExplorerBrowser view has finished enumerating files.</summary>
     public event EventHandler ViewEnumerationComplete;
 
     /// <summary>
@@ -608,8 +608,8 @@ public sealed class ExplorerBrowser :
     /// <summary>Find the native control handle, remove its border style, then ask for a redraw.</summary>
     internal void RemoveWindowBorder()
     {
-        // There is an option (EBO_NOBORDER) to avoid showing a border on the native ExplorerBrowser control so we wouldn't have to
-        // remove it afterwards, but:
+        // There is an option (EBO_NOBORDER) to avoid showing a border on the native ExplorerBrowser control, so we wouldn't have to
+        // remove it afterward, but:
         // 1. It's not implemented by the Windows API Code Pack
         // 2. The flag doesn't seem to work anyway (tested on 7 and 8.1) For reference: EXPLORER_BROWSER_OPTIONS https://msdn.microsoft.com/en-us/library/windows/desktop/bb762501(v=vs.85).aspx
 

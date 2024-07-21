@@ -66,7 +66,7 @@ public static class PowerManager
         }
     }
 
-    /// <summary>Gets a value that indictates whether the monitor is on.</summary>
+    /// <summary>Gets a value that indicates whether the monitor is on.</summary>
     /// <exception cref="System.PlatformNotSupportedException">Requires Vista/Windows Server 2008.</exception>
     /// <value>A <see cref="System.Boolean" /> value.</value>
     public static bool IsMonitorOn

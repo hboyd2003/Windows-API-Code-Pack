@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+using System.Drawing;
 using System.IO;
 using Microsoft.WindowsAPICodePack.Shell;
 
@@ -7,7 +7,7 @@ namespace Microsoft.WindowsAPICodePack.ShellExtensions;
 /// <summary>
 ///     This interface exposes the <see cref="ConstructBitmap" /> function for initializing the Thumbnail Provider with
 ///     file information. This
-///     interface can be used in conjunction with the other intialization interfaces, but only 1 will be accessed according
+///     interface can be used in conjunction with the other initialization interfaces, but only 1 will be accessed according
 ///     to the priorities
 ///     preset by the Windows Shell: <see cref="IThumbnailFromStream" /><see cref="IThumbnailFromShellObject" />
 ///     <see cref="IThumbnailFromFile" />
@@ -31,7 +31,7 @@ public interface IThumbnailFromFile
 
 /// <summary>
 ///     This interface exposes the <see cref="ConstructBitmap" /> function for initializing the Thumbnail Provider with a
-///     <see cref="ShellObject" />. This interface can be used in conjunction with the other intialization interfaces, but
+///     <see cref="ShellObject" />. This interface can be used in conjunction with the other initialization interfaces, but
 ///     only 1 will be
 ///     accessed according to the priorities preset by the Windows Shell: <see cref="IThumbnailFromStream" />
 ///     <see cref="IThumbnailFromShellObject" /><see cref="IThumbnailFromFile" />
@@ -57,7 +57,7 @@ public interface IThumbnailFromShellObject
 ///     This interface exposes the <see cref="ConstructBitmap" /> function for initializing the Thumbnail Provider with a
 ///     <see cref="Stream" />. If this interfaces is not used, then the handler must opt out of process isolation. This
 ///     interface can be used
-///     in conjunction with the other intialization interfaces, but only 1 will be accessed according to the priorities
+///     in conjunction with the other initialization interfaces, but only 1 will be accessed according to the priorities
 ///     preset by the Windows
 ///     Shell: <see cref="IThumbnailFromStream" /><see cref="IThumbnailFromShellObject" /><see cref="IThumbnailFromFile" />
 /// </summary>

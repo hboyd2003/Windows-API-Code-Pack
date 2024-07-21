@@ -20,7 +20,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
     }
 
     // Disable warning if a method declaration hides another inherited from a parent COM interface To successfully import a COM interface,
-    // all inherited methods need to be declared again with the exception of those already declared in "IUnknown"
+    // all inherited methods need to be declared again except for those already declared in "IUnknown"
 #pragma warning disable 108
 
     [ComImport(),
@@ -257,7 +257,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         [PreserveSig]
         HResult RestateToString([In] ICondition pCondition, [In] bool fUseEnglish, [Out, MarshalAs(UnmanagedType.LPWStr)] out string ppszQueryString);
 
-        // Parse a condition for a given property. It can be anything that would go after 'PROPERTY:' in an AQS expession.
+        // Parse a condition for a given property. It can be anything that would go after 'PROPERTY:' in an AQS expression.
         [PreserveSig]
         HResult ParsePropertyValue([In, MarshalAs(UnmanagedType.LPWStr)] string pszPropertyName, [In, MarshalAs(UnmanagedType.LPWStr)] string pszInputString, [Out] out IQuerySolution ppSolution);
 

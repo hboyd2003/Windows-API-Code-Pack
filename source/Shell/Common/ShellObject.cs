@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 using Microsoft.WindowsAPICodePack.Shell.Resources;
@@ -16,7 +16,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <summary>Internal member to keep track of the native IShellItem2</summary>
         internal IShellItem2 nativeShellItem;
 
-        /// <summary>A friendly name for this object that' suitable for display</summary>
+        /// <summary>A friendly name for this object that's suitable for display</summary>
         private string _internalName;
 
         /// <summary>Parsing name for this Object e.g. c:\Windows\file.txt, or ::{Some Guid}</summary>
@@ -263,7 +263,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         }
 
         /// <summary>Determines if two ShellObjects are identical.</summary>
-        /// <param name="other">The ShellObject to comare this one to.</param>
+        /// <param name="other">The ShellObject to compare this one to.</param>
         /// <returns>True if the ShellObjects are equal, false otherwise.</returns>
         public bool Equals(ShellObject other)
         {
@@ -294,7 +294,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// Returns the display name of the ShellFolder object. DisplayNameType represents one of the values that indicates how the name
         /// should look. See <see cref="Microsoft.WindowsAPICodePack.Shell.DisplayNameType"/> for a list of possible values.
         /// </summary>
-        /// <param name="displayNameType">A disaply name type.</param>
+        /// <param name="displayNameType">A display name type.</param>
         /// <returns>A string.</returns>
         public virtual string GetDisplayName(DisplayNameType displayNameType)
         {

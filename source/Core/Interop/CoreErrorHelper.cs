@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 namespace MS.WindowsAPICodePack.Internal;
 
@@ -84,7 +84,7 @@ internal static class CoreErrorHelper
     /// <summary>This is intended for Library Internal use only.</summary>
     /// <param name="result">The COM error code.</param>
     /// <param name="win32ErrorCode">The Win32 error code.</param>
-    /// <returns>Inticates that the Win32 error code corresponds to the COM error code.</returns>
+    /// <returns>Indicates that the Win32 error code corresponds to the COM error code.</returns>
     public static bool Matches(int result, int win32ErrorCode)
     {
         return result == HResultFromWin32(win32ErrorCode);

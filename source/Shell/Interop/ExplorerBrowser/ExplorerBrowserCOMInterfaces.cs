@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell;
 using MS.WindowsAPICodePack.Internal;
@@ -202,7 +202,7 @@ namespace Microsoft.WindowsAPICodePack.Controls
         void Destroy();
 
         /// <summary>Sets the size and position of the view windows created by the browser.</summary>
-        /// <param name="phdwp">A pointer to a DeferWindowPos handle. This paramater can be NULL.</param>
+        /// <param name="phdwp">A pointer to a DeferWindowPos handle. This parameter can be NULL.</param>
         /// <param name="rcBrowser">The coordinates that the browser will occupy.</param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.InternalCall, MethodCodeType = MethodCodeType.Runtime)]
@@ -693,7 +693,7 @@ namespace Microsoft.WindowsAPICodePack.Controls
     }
 
     // Disable warning if a method declaration hides another inherited from a parent COM interface To successfully import a COM interface,
-    // all inherited methods need to be declared again with the exception of those already declared in "IUnknown"
+    // all inherited methods need to be declared again except for those already declared in "IUnknown"
 #pragma warning disable 108
     //[ComImport,
     // Guid(ExplorerBrowserIIDGuid.ICommDlgBrowser),

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -41,7 +41,7 @@ internal static class ShellPropertyFactory
 
     /// <summary>Converts VarEnum to its associated .net Type.</summary>
     /// <param name="VarEnumType">VarEnum value</param>
-    /// <returns>Associated .net equivelent.</returns>
+    /// <returns>Associated .net equivalent.</returns>
     [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
     public static Type VarEnumToSystemType(VarEnum VarEnumType)
     {

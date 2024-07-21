@@ -21,7 +21,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         }
 
         /// <summary>
-        /// Creates a Event Args for a specific tabbed thumbnail event.
+        /// Creates an Event Args for a specific tabbed thumbnail event.
         /// </summary>
         /// <param name="windowsControl">WPF Control (UIElement) related to the event</param>        
         public TabbedThumbnailEventArgs(UIElement windowsControl)

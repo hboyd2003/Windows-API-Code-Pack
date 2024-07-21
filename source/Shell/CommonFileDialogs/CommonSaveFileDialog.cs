@@ -127,8 +127,8 @@ namespace Microsoft.WindowsAPICodePack.Dialogs
         public void SetCollectedPropertyKeys(bool appendDefault, params PropertyKey[] propertyList)
         {
             // Loop through all our property keys and create a semicolon-delimited property list string. The string we pass to
-            // PSGetPropertyDescriptionListFromString must start with "prop:", followed a list of canonical names for each property that is
-            // to collected.
+            // PSGetPropertyDescriptionListFromString must start with "prop:", followed by a list of canonical names for each property that is
+            // to be collected.
             if (propertyList != null && propertyList.Length > 0 && propertyList[0] != null)
             {
                 var sb = new StringBuilder("prop:");
@@ -148,7 +148,7 @@ namespace Microsoft.WindowsAPICodePack.Dialogs
                         ref guid,
                         out propertyDescriptionList);
 
-                    // If we get a IPropertyDescriptionList, setit on the native dialog.
+                    // If we get a IPropertyDescriptionList, set it on the native dialog.
                     if (CoreErrorHelper.Succeeded(hr))
                     {
                         InitializeNativeFileDialog();

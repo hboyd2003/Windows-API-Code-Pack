@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell.Resources;
 using MS.WindowsAPICodePack.Internal;
@@ -162,7 +162,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
                 // We need Windows 7 onwards ...
                 CoreHelpers.RunningOnWin7;
 
-        /// <summary>Get a the known folder FOLDERID_Libraries</summary>
+        /// <summary>Get the known folder FOLDERID_Libraries</summary>
         public static IKnownFolder LibrariesKnownFolder
         {
             get
@@ -415,7 +415,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
             return new ShellLibrary(sourceKnownFolder, isReadOnly);
         }
 
-        /// <summary>Shows the library management dialog which enables users to mange the library folders and default save location.</summary>
+        /// <summary>Shows the library management dialog which enables users to manage the library folders and default save location.</summary>
         /// <param name="libraryName">The name of the library</param>
         /// <param name="folderPath">The path to the library.</param>
         /// <param name="windowHandle">The parent window,or IntPtr.Zero for no parent</param>
@@ -425,7 +425,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <remarks>If the library is already open in read-write mode, the dialog will not save the changes.</remarks>
         public static void ShowManageLibraryUI(string libraryName, string folderPath, IntPtr windowHandle, string title, string instruction, bool allowAllLocations)
         {
-            // this method is not safe for MTA consumption and will blow Access Violations if called from an MTA thread so we wrap this call
+            // this method is not safe for MTA consumption and will blow Access Violations if called from an MTA thread, so we wrap this call
             // up into a Worker thread that performs all operations in a single threaded apartment
             using (var shellLibrary = ShellLibrary.Load(libraryName, folderPath, true))
             {
@@ -433,7 +433,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
             }
         }
 
-        /// <summary>Shows the library management dialog which enables users to mange the library folders and default save location.</summary>
+        /// <summary>Shows the library management dialog which enables users to manage the library folders and default save location.</summary>
         /// <param name="libraryName">The name of the library</param>
         /// <param name="windowHandle">The parent window,or IntPtr.Zero for no parent</param>
         /// <param name="title">A title for the library management dialog, or null to use the library name as the title</param>
@@ -442,7 +442,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <remarks>If the library is already open in read-write mode, the dialog will not save the changes.</remarks>
         public static void ShowManageLibraryUI(string libraryName, IntPtr windowHandle, string title, string instruction, bool allowAllLocations)
         {
-            // this method is not safe for MTA consumption and will blow Access Violations if called from an MTA thread so we wrap this call
+            // this method is not safe for MTA consumption and will blow Access Violations if called from an MTA thread, so we wrap this call
             // up into a Worker thread that performs all operations in a single threaded apartment
             using (var shellLibrary = ShellLibrary.Load(libraryName, true))
             {
@@ -450,7 +450,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
             }
         }
 
-        /// <summary>Shows the library management dialog which enables users to mange the library folders and default save location.</summary>
+        /// <summary>Shows the library management dialog which enables users to manage the library folders and default save location.</summary>
         /// <param name="sourceKnownFolder">A known folder.</param>
         /// <param name="windowHandle">The parent window,or IntPtr.Zero for no parent</param>
         /// <param name="title">A title for the library management dialog, or null to use the library name as the title</param>
@@ -459,7 +459,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <remarks>If the library is already open in read-write mode, the dialog will not save the changes.</remarks>
         public static void ShowManageLibraryUI(IKnownFolder sourceKnownFolder, IntPtr windowHandle, string title, string instruction, bool allowAllLocations)
         {
-            // this method is not safe for MTA consumption and will blow Access Violations if called from an MTA thread so we wrap this call
+            // this method is not safe for MTA consumption and will blow Access Violations if called from an MTA thread, so we wrap this call
             // up into a Worker thread that performs all operations in a single threaded apartment
             using (var shellLibrary = ShellLibrary.Load(sourceKnownFolder, true))
             {

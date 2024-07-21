@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell.Resources;
 using MS.WindowsAPICodePack.Internal;
@@ -35,7 +35,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
             // Set the window handle on the buttons (for future updates)
             Array.ForEach(_thumbnailButtons, new Action<ThumbnailToolBarButton>(UpdateHandle));
 
-            // Assign the window handle (coming from the user) to this native window
+            // Assign the window handle (coming from the user) to this native window,
             // so we can intercept the window messages sent from the taskbar to this window.
             AssignHandle(windowHandle);
         }

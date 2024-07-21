@@ -1671,13 +1671,13 @@ public partial class ShellProperties
         /// <summary>
         ///     <para>Name:     System.ItemTypeText -- PKEY_ItemTypeText</para>
         ///     <para>
-        ///         Description: This is the user friendly type name of the item.  This is not intended to be
+        ///         Description: This is the user-friendly type name of the item.  This is not intended to be
         ///         programmatically parsed.
         ///         If System.ItemType is VT_EMPTY, the value of this property is also VT_EMPTY.
         ///         If the item is a file, the value of this property is the same as if you passed the
         ///         file's System.ItemType value to PSFormatForDisplay.
         ///         This property should not be confused with System.Kind, where System.Kind is a high-level
-        ///         user friendly kind name. For example, for a document, System.Kind = "Document" and
+        ///         user-friendly kind name. For example, for a document, System.Kind = "Document" and
         ///         System.Item.Type = ".doc" and System.Item.TypeText = "Microsoft Word Document"
         ///         Example values:
         ///         If the path is...                     The property value is...
@@ -2601,7 +2601,7 @@ public partial class ShellProperties
         ///     <para>Name:     System.ThumbnailStream -- PKEY_ThumbnailStream</para>
         ///     <para>
         ///         Description: Data that represents the thumbnail in VT_STREAM format that GDI+/WindowsCodecs supports (jpg, png,
-        ///         etc).
+        ///         etc.).
         ///     </para>
         ///     <para>Type:     Stream -- VT_STREAM</para>
         ///     <para>FormatID: (FMTID_SummaryInformation) {F29F85E0-4FF9-1068-AB91-08002B27B3D9}, 27</para>
@@ -8811,7 +8811,7 @@ public partial class ShellProperties
         /// <summary>
         ///     <para>Name:     System.Identity.UserName -- PKEY_Identity_UserName</para>
         ///     <para>
-        ///         Description: Identity User Name
+        ///         Description: Identity Username
         ///     </para>
         ///     <para>Type:     String -- VT_LPWSTR  (For variants: VT_BSTR)</para>
         ///     <para>FormatID: {C4322503-78CA-49C6-9ACC-A68E2AFD7B6B}, 100</para>
@@ -14183,7 +14183,7 @@ public partial class ShellProperties
         ///     <para>Name:     System.Search.IsClosedDirectory -- PKEY_Search_IsClosedDirectory</para>
         ///     <para>
         ///         Description: If this property is emitted with a value of TRUE, then it indicates that this URL's last modified
-        ///         time applies to all of it's children, and if this URL is deleted then all of it's children are deleted as well.
+        ///         time applies to all of its children, and if this URL is deleted then all of its children are deleted as well.
         ///         For example, this would be emitted as TRUE when emitting the URL of an email so that all attachments are tied
         ///         to the last modified time of that email.
         ///     </para>

@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 using Microsoft.WindowsAPICodePack.Shell.Resources;
@@ -281,7 +281,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <summary>Creates a condition node that is a logical negation (NOT) of another condition (a subnode of this node).</summary>
         /// <param name="conditionToBeNegated">SearchCondition node to be negated.</param>
         /// <param name="simplify">
-        /// True to logically simplify the result if possible; False otherwise. In a query builder scenario, simplyfy should typically be set
+        /// True to logically simplify the result if possible; False otherwise. In a query builder scenario, simplify should typically be set
         /// to false.
         /// </param>
         /// <returns>New SearchCondition</returns>

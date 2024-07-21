@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell.Resources;
 using MS.WindowsAPICodePack.Internal;
@@ -223,7 +223,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// <param name="windowHandle">Window handle for the window that needs a specific application id</param>
         /// <remarks>AppId specifies a unique Application User Model ID (AppID) for the application or individual 
         /// top-level window whose taskbar button will hold the custom JumpList built through the methods <see cref="Microsoft.WindowsAPICodePack.Taskbar.JumpList"/> class.
-        /// By setting an appId for a specific window, the window will not be grouped with it's parent window/application. Instead it will have it's own taskbar button.</remarks>
+        /// By setting an appId for a specific window, the window will not be grouped with its parent window/application. Instead, it will have its own taskbar button.</remarks>
         public void SetApplicationIdForSpecificWindow(IntPtr windowHandle, string appId) =>
             // Left as instance method, to follow singleton pattern.
             TaskbarNativeMethods.SetWindowAppId(windowHandle, appId);
@@ -235,7 +235,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// <param name="window">Window that needs a specific application id</param>
         /// <remarks>AppId specifies a unique Application User Model ID (AppID) for the application or individual 
         /// top-level window whose taskbar button will hold the custom JumpList built through the methods <see cref="Microsoft.WindowsAPICodePack.Taskbar.JumpList"/> class.
-        /// By setting an appId for a specific window, the window will not be grouped with it's parent window/application. Instead it will have it's own taskbar button.</remarks>
+        /// By setting an appId for a specific window, the window will not be grouped with its parent window/application. Instead, it will have its own taskbar button.</remarks>
         public void SetApplicationIdForSpecificWindow(System.Windows.Window window, string appId) =>
             // Left as instance method, to follow singleton pattern.
             TaskbarNativeMethods.SetWindowAppId((new WindowInteropHelper(window)).Handle, appId);

@@ -11,7 +11,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <summary>Default constructor.</summary>
         public ShellException() { }
 
-        /// <summary>Initializes an excpetion with a custom message.</summary>
+        /// <summary>Initializes an exception with a custom message.</summary>
         /// <param name="message">Custom message</param>
         public ShellException(string message) : base(message) { }
 

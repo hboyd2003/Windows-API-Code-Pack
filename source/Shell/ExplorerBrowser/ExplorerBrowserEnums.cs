@@ -1,13 +1,13 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 
 namespace Microsoft.WindowsAPICodePack.Controls;
 
 /// <summary>
-///     Indicates the content options of the explorer browser. Typically use one, or a bitwise combination of these flags
+///     Indicates the content options of the explorer browser. Typically, use one, or a bitwise combination of these flags
 ///     to specify how
-///     conent should appear in the explorer browser control
+///     content should appear in the explorer browser control
 /// </summary>
 [Flags]
 public enum ExplorerBrowserContentSectionOptions
@@ -56,7 +56,7 @@ public enum ExplorerBrowserContentSectionOptions
 }
 
 /// <summary>
-///     Specifies the options that control subsequent navigation. Typically use one, or a bitwise combination of these
+///     Specifies the options that control subsequent navigation. Typically, use one, or a bitwise combination of these
 ///     flags to specify how
 ///     the explorer browser navigates.
 /// </summary>

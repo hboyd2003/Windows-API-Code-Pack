@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Globalization;
@@ -23,10 +23,10 @@ public static class CoreHelpers
     public static bool RunningOnXP => Environment.OSVersion.Platform == PlatformID.Win32NT &&
                                       Environment.OSVersion.Version.Major >= 5;
 
-    /// <summary>Get a string resource given a resource Id</summary>
-    /// <param name="resourceId">The resource Id</param>
+    /// <summary>Get a string resource given a resource ID</summary>
+    /// <param name="resourceId">The resource ID</param>
     /// <returns>
-    ///     The string resource corresponding to the given resource Id. Returns null if the resource id is invalid or the
+    ///     The string resource corresponding to the given resource ID. Returns null if the resource ID is invalid or the
     ///     string cannot be
     ///     retrieved for any other reason.
     /// </returns>

@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell;
 using Microsoft.WindowsAPICodePack.Shell.Resources;
@@ -37,7 +37,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
             {
                 _taskbarWindow = value;
 
-                // If we have a TaskbarWindow assigned, set it's icon
+                // If we have a TaskbarWindow assigned, set its icon
                 if (_taskbarWindow != null && _taskbarWindow.TabbedThumbnailProxyWindow != null)
                 {
                     _taskbarWindow.TabbedThumbnailProxyWindow.Icon = Icon;
@@ -123,7 +123,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// This window has to be a top-level window and the handle cannot be null</param>
         /// <param name="windowsControl">WPF Control (UIElement) for which a tabbed thumbnail needs to be displayed</param>
         /// <param name="peekOffset">Offset point used for displaying the peek bitmap. This setting is
-        /// recomended for hidden WPF controls as it is difficult to calculate their offset.</param>
+        /// recommended for hidden WPF controls as it is difficult to calculate their offset.</param>
         public TabbedThumbnail(Window parentWindow, UIElement windowsControl, Vector peekOffset)
         {
             if (windowsControl == null)
@@ -167,7 +167,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         private string _tooltip = string.Empty;
         /// <summary>
         /// Tooltip to be shown for this thumbnail on the taskbar. 
-        /// By default this is full title of the window shown on the taskbar.
+        /// By default, this is full title of the window shown on the taskbar.
         /// </summary>
         public string Tooltip
         {
@@ -344,7 +344,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
 
         /// <summary>
         /// Gets or sets the offset used for displaying the peek bitmap. This setting is
-        /// recomended for hidden WPF controls as it is difficult to calculate their offset.
+        /// recommended for hidden WPF controls as it is difficult to calculate their offset.
         /// </summary>
         public Vector? PeekOffset { get; set; }
 

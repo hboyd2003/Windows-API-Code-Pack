@@ -38,7 +38,7 @@ public class PowerManagerException : Exception
     {
     }
 
-    /// <summary>Initializes an excpetion with a custom message.</summary>
+    /// <summary>Initializes an exception with a custom message.</summary>
     /// <param name="message">A custom message for the exception.</param>
     public PowerManagerException(string message) : base(message)
     {

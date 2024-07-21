@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -463,7 +463,7 @@
     <value>The array of buttons must contain at least 1 item.</value>
   </data>
   <data name="TaskbarWindowManagerButtonsAlreadyAdded" xml:space="preserve">
-    <value>Tool bar buttons for this window are already added. Please refer to the Remarks section of the AddButtons method for more information on updating the properties or hiding existing buttons.</value>
+    <value>Toolbar buttons for this window are already added. Please refer to the Remarks section of the AddButtons method for more information on updating the properties or hiding existing buttons.</value>
   </data>
   <data name="TaskbarWindowValueSet" xml:space="preserve">
     <value>Value is already set. It cannot be set more than once.</value>

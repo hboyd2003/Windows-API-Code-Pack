@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using MS.WindowsAPICodePack.Internal;
 using System;
@@ -22,7 +22,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <value>A <see cref="FolderCategory"/> value.</value>
         public FolderCategory Category => knownFolderProperties.category;
 
-        /// <summary>Gets an value that describes this known folder's behaviors.</summary>
+        /// <summary>Gets a value that describes this known folder's behaviors.</summary>
         /// <value>A <see cref="DefinitionOptions"/> value.</value>
         public DefinitionOptions DefinitionOptions => knownFolderProperties.definitionOptions;
 
@@ -141,7 +141,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
             }
         }
 
-        /// <summary>Gets the path of this this known folder.</summary>
+        /// <summary>Gets the path of this known folder.</summary>
         /// <param name="fileExists">
         /// Returns false if the folder is virtual, or a boolean value that indicates whether this known folder exists.
         /// </param>

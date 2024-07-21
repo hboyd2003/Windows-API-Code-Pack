@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 
 using System;
 using System.Collections;
@@ -66,7 +66,7 @@ public class SensorData : IDictionary<Guid, IList<object>>
         return c.Contains(item);
     }
 
-    /// <summary>Determines if a particular data field itentifer is present in the collection.</summary>
+    /// <summary>Determines if a particular data field identifier is present in the collection.</summary>
     /// <param name="key">The data field identifier.</param>
     /// <returns><b>true</b> if the data field identifier is present.</returns>
     public bool ContainsKey(Guid key)

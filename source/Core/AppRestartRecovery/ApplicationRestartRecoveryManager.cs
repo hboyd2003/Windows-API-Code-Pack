@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Runtime.InteropServices;
@@ -24,7 +24,7 @@ public static class ApplicationRestartRecoveryManager
     ///     application after this method is invoked.
     /// </remarks>
     /// <param name="success">
-    ///     <b>true</b> to indicate the the program was able to complete its recovery work before terminating; otherwise
+    ///     <b>true</b> to indicate the program was able to complete its recovery work before terminating; otherwise
     ///     <b>false</b>.
     /// </param>
     public static void ApplicationRecoveryFinished(bool success)

@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 
 using System;
 
@@ -14,7 +14,7 @@ public sealed class SensorDescriptionAttribute : Attribute
 {
     private readonly Guid _sensorType;
 
-    /// <summary>Constructs the attribue with a string represening the sensor type GUID and the type of the data report class.</summary>
+    /// <summary>Constructs the attribute with a string representing the sensor type GUID and the type of the data report class.</summary>
     /// <param name="sensorType">String representing the sensor type GUID.</param>
     public SensorDescriptionAttribute(string sensorType)
     {

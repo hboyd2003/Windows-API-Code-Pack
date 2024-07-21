@@ -22,7 +22,7 @@ public sealed class DialogControlCollection<T> : Collection<T> where T : DialogC
     ///     Defines the indexer that supports accessing controls by name.
     /// </summary>
     /// <remarks>
-    ///     <para>Control names are case sensitive.</para>
+    ///     <para>Control names are case-sensitive.</para>
     ///     <para>
     ///         This indexer is useful when the dialog is created in XAML
     ///         rather than constructed in code.
@@ -43,15 +43,15 @@ public sealed class DialogControlCollection<T> : Collection<T> where T : DialogC
         }
     }
 
-    /// <summary>Searches for the control who's id matches the value passed in the <paramref name="id" /> parameter.</summary>
+    /// <summary>Searches for the control whose id matches the value passed in the <paramref name="id" /> parameter.</summary>
     /// <param name="id">An integer containing the identifier of the control being searched for.</param>
-    /// <returns>A DialogControl who's id matches the value of the <paramref name="id" /> parameter.</returns>
+    /// <returns>A DialogControl whose id matches the value of the <paramref name="id" /> parameter.</returns>
     internal DialogControl GetControlbyId(int id)
     {
         return Items.FirstOrDefault(x => x.Id == id);
     }
 
-    /// <summary>Inserts an dialog control at the specified index.</summary>
+    /// <summary>Inserts a dialog control at the specified index.</summary>
     /// <param name="index">The location to insert the control.</param>
     /// <param name="control">The item to insert.</param>
     /// <permission cref="System.InvalidOperationException">

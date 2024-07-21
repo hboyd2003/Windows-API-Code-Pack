@@ -1,10 +1,10 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Controls.WindowsForms;
 
 namespace Microsoft.WindowsAPICodePack.Controls;
 
-/// <summary>These options control the results subsequent navigations of the ExplorerBrowser</summary>
+/// <summary>These options control the results subsequent navigation of the ExplorerBrowser</summary>
 public class ExplorerBrowserNavigationOptions
 {
     private readonly ExplorerBrowser eb;

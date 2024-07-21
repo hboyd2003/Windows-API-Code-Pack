@@ -1,4 +1,4 @@
-﻿/* Unmerged change from project 'Shell (net452)'
+/* Unmerged change from project 'Shell (net452)'
 Before:
 using System;
 using System.Windows.Interop;
@@ -115,10 +115,10 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <summary>Makes the background of current window transparent from both Wpf and Windows Perspective</summary>
         public void SetAeroGlassTransparency()
         {
-            // Set the Background to transparent from Win32 perpective
+            // Set the Background to transparent from Win32 perspective
             HwndSource.FromHwnd(windowHandle).CompositionTarget.BackgroundColor = System.Windows.Media.Colors.Transparent;
 
-            // Set the Background to transparent from WPF perpective
+            // Set the Background to transparent from WPF perspective
             Background = Brushes.Transparent;
         }
 

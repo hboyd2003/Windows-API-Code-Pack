@@ -534,7 +534,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         private static ReadOnlyCollection<IKnownFolder> GetAllFolders()
         {
             // Should this method be thread-safe?? (It'll take a while to get a list of all the known folders, create the managed wrapper and
-            // return the read-only collection.
+            // return the read-only collection).
 
             IList<IKnownFolder> foldersList = new List<IKnownFolder>();
             var folders = IntPtr.Zero;
@@ -557,7 +557,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
 
                         var kf = KnownFolderHelper.FromKnownFolderIdInternal(knownFolderID);
 
-                        // Add to our collection if it's not null (some folders might not exist on the system or we could have an exception
+                        // Add to our collection if it's not null (some folders might not exist on the system, or we could have an exception
                         // that resulted in the null return from above method call
                         if (kf != null) { foldersList.Add(kf); }
                     }

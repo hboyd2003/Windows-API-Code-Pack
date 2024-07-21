@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Collections.Generic;
@@ -203,7 +203,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         public StockIcon SlowFile => GetStockIcon(StockIconIdentifier.SlowFile);
 
         /// <summary>
-        ///  Icon for a empty recycle bin.
+        ///  Icon for an empty recycle bin.
         /// </summary>
         public StockIcon Recycler => GetStockIcon(StockIconIdentifier.Recycler);
 
@@ -258,7 +258,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         public StockIcon Stack => GetStockIcon(StockIconIdentifier.Stack);
 
         /// <summary>
-        ///  Icon for a SVCD media.
+        ///  Icon for an SVCD media.
         /// </summary>
         public StockIcon MediaSvcd => GetStockIcon(StockIconIdentifier.MediaSvcd);
 
@@ -548,7 +548,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         public StockIcon MediaBluRayR => GetStockIcon(StockIconIdentifier.MediaBluRayR);
 
         /// <summary>
-        /// Icon for BluRay RE Media (Rewriable and RAM)
+        /// Icon for BluRay RE Media (Rewritable and RAM)
         /// </summary>
         public StockIcon MediaBluRayRE => GetStockIcon(StockIconIdentifier.MediaBluRayRE);
 

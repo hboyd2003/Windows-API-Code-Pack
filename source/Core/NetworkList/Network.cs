@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 
@@ -81,7 +81,7 @@ public class Network
     /// <summary>Gets the domain type of the network.</summary>
     /// <value>A <see cref="DomainType" /> value.</value>
     /// <remarks>
-    ///     The domain indictates whether the network is an Active Directory Network, and whether the machine has been
+    ///     The domain indicates whether the network is an Active Directory Network, and whether the machine has been
     ///     authenticated by
     ///     Active Directory.
     /// </remarks>

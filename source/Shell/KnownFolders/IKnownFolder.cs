@@ -15,7 +15,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <summary>Gets the category designation for this known folder.</summary>
         FolderCategory Category { get; }
 
-        /// <summary>Gets an value that describes this known folder's behaviors.</summary>
+        /// <summary>Gets a value that describes this known folder's behaviors.</summary>
         DefinitionOptions DefinitionOptions { get; }
 
         /// <summary>Gets this known folder's description.</summary>

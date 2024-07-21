@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Collections;
@@ -49,7 +49,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
                     NotifyCollectionChangedAction.Add,
                     category));
 
-            // Make sure that a collection changed event is fire if this category
+            // Make sure that a collection changed event is fire if this category,
             // or it's corresponding jumplist is modified
             category.CollectionChanged += CollectionChanged;
             category.JumpListItems.CollectionChanged += CollectionChanged;

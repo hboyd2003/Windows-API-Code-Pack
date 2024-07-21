@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 
 using System;
 using System.Collections.Generic;
@@ -41,7 +41,7 @@ internal struct SensorTypeData
     public Type SensorType { get; }
 }
 
-/// <summary>Manages the sensors conected to the system.</summary>
+/// <summary>Manages the sensors connected to the system.</summary>
 public static class SensorManager
 {
     /// <summary>Sensor type GUID -&gt; .NET Type + report type</summary>
@@ -70,7 +70,7 @@ public static class SensorManager
             "The event is raised from a static method, and so providing the instance of the sender is not possible")]
     public static event SensorsChangedEventHandler SensorsChanged;
 
-    /// <summary>Retireves a collection of all sensors.</summary>
+    /// <summary>Retrieves a collection of all sensors.</summary>
     /// <returns>A list of all sensors.</returns>
     [SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
     public static SensorList<Sensor> GetAllSensors()
@@ -106,7 +106,7 @@ public static class SensorManager
 
     /// <summary>Returns a collection of sensors filtered by type ID.</summary>
     /// <param name="typeId">The type ID of the sensors requested.</param>
-    /// <returns>A list of sensors of the spefified type ID.</returns>
+    /// <returns>A list of sensors of the specified type ID.</returns>
     public static SensorList<Sensor> GetSensorsByTypeId(Guid typeId)
     {
         var hr = sensorManager.GetSensorsByType(typeId, out var sensorCollection);
@@ -211,12 +211,12 @@ public static class SensorManager
             }
             catch (FileNotFoundException)
             {
-                // GetExportedTypes can throw this if a loaded asembly is not in the current directory or path.
+                // GetExportedTypes can throw this if a loaded assembly is not in the current directory or path.
             }
     }
 
     /// <summary>
-    ///     Returns an instance of a sensor wrapper appropritate for the given sensor COM interface. If no appropriate sensor
+    ///     Returns an instance of a sensor wrapper appropriate for the given sensor COM interface. If no appropriate sensor
     ///     wrapper type
     ///     could be found, the object created will be of the base-class type <see cref="Sensor" />.
     /// </summary>

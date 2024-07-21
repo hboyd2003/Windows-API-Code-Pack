@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 
 namespace Microsoft.WindowsAPICodePack.Shell
 {
     /// <summary>
     /// The STGM constants are flags that indicate conditions for creating and deleting the object and access modes for the object.
     ///
-    /// You can combine these flags, but you can only choose one flag from each group of related flags. Typically one flag from each of the
+    /// You can combine these flags, but you can only choose one flag from each group of related flags. Typically, one flag from each of the
     /// access and sharing groups must be specified for all functions and methods which use these constants.
     /// </summary>
     [Flags]

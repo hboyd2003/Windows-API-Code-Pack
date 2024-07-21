@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell;
 using Microsoft.WindowsAPICodePack.Shell.Resources;
@@ -215,7 +215,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         /// Call this method to keep the application and the taskbar in sync as to which window/control
         /// is currently active (or selected, in the case of tabbed application).
         /// </summary>
-        /// <param name="preview">TabbedThumbnail for the specific control/indow that is currently active in the application</param>
+        /// <param name="preview">TabbedThumbnail for the specific control/window that is currently active in the application</param>
         /// <exception cref="System.ArgumentException">If the control/window is not yet added to the tabbed thumbnails list</exception>
         public void SetActiveTab(TabbedThumbnail preview)
         {

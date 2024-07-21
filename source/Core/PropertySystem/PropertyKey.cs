@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Globalization;
@@ -29,7 +29,7 @@ public struct PropertyKey : IEquatable<PropertyKey>
     }
 
     /// <summary>PropertyKey Constructor</summary>
-    /// <param name="formatId">A string represenstion of a GUID for the property</param>
+    /// <param name="formatId">A string representation of a GUID for the property</param>
     /// <param name="propertyId">Property identifier (PID)</param>
     public PropertyKey(string formatId, int propertyId)
     {
@@ -85,7 +85,7 @@ public struct PropertyKey : IEquatable<PropertyKey>
         return !propKey1.Equals(propKey2);
     }
 
-    /// <summary>Override ToString() to provide a user friendly string representation</summary>
+    /// <summary>Override ToString() to provide a user-friendly string representation</summary>
     /// <returns>String representing the property key</returns>
     public override string ToString()
     {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Windows.Forms;
@@ -47,7 +47,7 @@ public abstract class WinFormsPreviewHandler : PreviewHandler, IDisposable
         if (disposing && Control != null) Control.Dispose();
     }
 
-    /// <summary>Called when an exception is thrown during itialization of the preview control.</summary>
+    /// <summary>Called when an exception is thrown during initialization of the preview control.</summary>
     /// <param name="caughtException"></param>
     [SuppressMessage("Microsoft.Reliability", "CA2000:Dispose objects before losing scope",
         Justification =

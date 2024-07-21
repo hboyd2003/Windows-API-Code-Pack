@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell;
 using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
@@ -89,7 +89,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         public string WorkingDirectory { get; set; }
 
         /// <summary>
-        /// Gets or sets the show command of the lauched application.
+        /// Gets or sets the show command of the launched application.
         /// </summary>
         public WindowShowCommand ShowCommand { get; set; }
 

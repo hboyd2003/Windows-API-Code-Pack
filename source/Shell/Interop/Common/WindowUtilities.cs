@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 /* Unmerged change from project 'Shell (net452)'
 Before:
@@ -110,7 +110,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         Maximize = 0x01000000,
 
         /// <summary>
-        /// The window has a maximize button. Cannot be combined with the WS_EX_CONTEXTHELP style. The WS_SYSMENU style must also be specifie
+        /// The window has a maximize button. Cannot be combined with the WS_EX_CONTEXTHELP style. The WS_SYSMENU style must also be specified
         /// </summary>
         MaximizeBox = 0x00010000,
 

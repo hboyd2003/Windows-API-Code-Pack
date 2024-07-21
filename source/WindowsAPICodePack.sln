@@ -26,6 +26,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtendedLinguisticServicesT
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0487604D-8B4D-4D74-B13B-F893A7BE60D7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E47A78A-5E90-45E8-9EC3-E0F624B909B0}"
+	ProjectSection(SolutionItems) = preProject
+		WindowsAPICodePack.sln.DotSettings = WindowsAPICodePack.sln.DotSettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CodeAnalysisDebug|Any CPU = CodeAnalysisDebug|Any CPU

@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 
@@ -36,7 +36,7 @@ public enum ConnectivityStates
     IPv6Subnet = 0x100
 }
 
-/// <summary>Specifies the domain type of a network.</summary>
+/// <summary>Specifies the domain type of network.</summary>
 public enum DomainType
 {
     /// <summary>The network is not an Active Directory network.</summary>

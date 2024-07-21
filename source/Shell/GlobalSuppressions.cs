@@ -194,7 +194,7 @@
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Microsoft.WindowsAPICodePack.Shell.SearchCondition.#GetSubConditions()", Justification = "This method either creates a new instance of an object or has the potential of throwing an exception.")]
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Microsoft.WindowsAPICodePack.Shell.PropertySystem.ShellProperties.#GetPropertyWriter()", Justification = "This method either creates a new instance of an object or has the potential of throwing an exception.")]
 
-// There is logic that needs to be intialized within the static constructor that would require a different implementation if moved inline.
+// There is logic that needs to be initialized within the static constructor that would require a different implementation if moved inline.
 [assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Microsoft.WindowsAPICodePack.Shell.FolderIdentifiers.#.cctor()")]
 
 // These enum's do not represent flags (even though their values may suggest it)

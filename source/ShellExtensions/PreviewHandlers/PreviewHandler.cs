@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -69,7 +69,7 @@ public abstract class PreviewHandler : ICustomQueryInterface, IPreviewHandler, I
     CustomQueryInterfaceResult ICustomQueryInterface.GetInterface(ref Guid iid, out IntPtr ppv)
     {
         ppv = IntPtr.Zero;
-        // Forces COM to not use the managed (free threaded) marshaler
+        // Forces COM to not use the managed (free threaded) marshaller
         if (iid == HandlerNativeMethods.IMarshalGuid) return CustomQueryInterfaceResult.Failed;
 
         if ((iid == HandlerNativeMethods.IInitializeWithStreamGuid && !(this is IPreviewFromStream))
@@ -131,7 +131,7 @@ public abstract class PreviewHandler : ICustomQueryInterface, IPreviewHandler, I
 
     void IOleWindow.ContextSensitiveHelp(bool fEnterMode)
     {
-        // Preview handlers don't support context sensitive help. (As far as I know.)
+        // Preview handlers don't support context-sensitive help. (As far as I know.)
         throw new NotImplementedException();
     }
 

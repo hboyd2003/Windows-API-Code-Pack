@@ -18,7 +18,7 @@ public class MappingService
     private readonly Win32Service _win32Service;
 
     /// <summary>
-    ///     Constructs a new <see cref="MappingService">MappingService</see> object by instanciating an ELS service by its
+    ///     Constructs a new <see cref="MappingService">MappingService</see> object by instantiating an ELS service by its
     ///     guid. For Windows
     ///     7, the only supported GUIDs are provided as readonly members of the
     ///     <see cref="MappingAvailableServices">MappingAvailableServices</see> class.

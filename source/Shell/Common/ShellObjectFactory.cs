@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell.Resources;
 using MS.WindowsAPICodePack.Internal;
@@ -153,7 +153,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
             return ShellObjectFactory.Create(nativeShellItem);
         }
 
-        // This is a work around for the STA thread bug. This will execute the call on a non-sta thread, then return the result
+        // This is a workaround for the STA thread bug. This will execute the call on a non-sta thread, then return the result
         private static bool IsVirtualKnownFolder(IShellItem2 nativeShellItem2)
         {
             var pidl = IntPtr.Zero;
@@ -165,11 +165,11 @@ namespace Microsoft.WindowsAPICodePack.Shell
                 // We found a bug where the enumeration of shell folders was not reliable when called from a STA thread - it would return
                 // different results the first time vs the other times.
                 //
-                // This is a work around. We call FindFolderFromIDList on a worker MTA thread instead of the main STA thread.
+                // This is a workaround. We call FindFolderFromIDList on a worker MTA thread instead of the main STA thread.
                 //
                 // Ultimately, it would be a very good idea to replace the 'getting shell object' logic to get a list of pidl's in 1 step,
                 // then look up their information in a 2nd, rather than looking them up as we get them. This would replace the need for the
-                // work around.
+                // workaround.
                 var padlock = new object();
                 lock (padlock)
                 {

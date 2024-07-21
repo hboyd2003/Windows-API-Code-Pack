@@ -28,7 +28,7 @@ internal interface ISensor
     [PreserveSig]
     HResult GetType(out Guid sensorType);
 
-    /// <summary>Human readable name for sensor</summary>
+    /// <summary>Human-readable name for sensor</summary>
     /// <param name="friendlyName">The friendly name for the sensor</param>
     [PreserveSig]
     HResult GetFriendlyName([Out] [MarshalAs(UnmanagedType.BStr)] out string friendlyName);
@@ -69,7 +69,7 @@ internal interface ISensor
         [Out] [MarshalAs(UnmanagedType.Interface)]
         out IPortableDeviceValues results);
 
-    /// <summary>Reports whether or not a sensor can deliver the requested data type</summary>
+    /// <summary>Reports whether a sensor can deliver the requested data type or not.</summary>
     /// <param name="key">The GUID to find matching PROPERTYKEY structures for</param>
     /// <param name="isSupported">A collection of PROPERTYKEY structures representing the data values</param>
     void SupportsDataField(
@@ -86,7 +86,7 @@ internal interface ISensor
     [PreserveSig]
     HResult GetData([Out] [MarshalAs(UnmanagedType.Interface)] out ISensorDataReport dataReport);
 
-    /// <summary>Reports whether or not a sensor supports the specified event.</summary>
+    /// <summary>Reports whether a sensor supports the specified event or not.</summary>
     /// <param name="eventGuid">The event identifier</param>
     /// <param name="isSupported">true if the event is supported, otherwise false</param>
     void SupportsEvent(

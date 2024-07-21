@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 
@@ -247,7 +247,7 @@ public enum PropertyDescriptionFormatOptions
     /// <summary>The date displayed as 'MM/DD/YY'. For example, '3/21/04'.</summary>
     ShortDate = 0x80,
 
-    /// <summary>The date displayed as 'DayOfWeek Month day, year'. For example, 'Monday, March 21, 2004'.</summary>
+    /// <summary>The date displayed as 'DayOfWeek Month day, year'. For example, 'Sunday, March 21, 2004'.</summary>
     LongDate = 0x100,
 
     /// <summary>The date portion of date/time hidden.</summary>
@@ -426,7 +426,7 @@ public enum PropertyTypeOptions
     /// <remarks>
     ///     Windows Vista with Service Pack 1 (SP1) and later. This value is used by the Remove Properties user interface (UI)
     ///     to determine
-    ///     whether to display a check box next to an property that allows that property to be selected for removal. Note that
+    ///     whether to display a checkbox next to a property that allows that property to be selected for removal. Note that
     ///     a property
     ///     that is not innate can always be purged regardless of the presence or absence of this flag.
     /// </remarks>

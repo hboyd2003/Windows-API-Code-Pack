@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Diagnostics;
@@ -34,7 +34,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <value>A <see cref="FolderCategory"/> value.</value>
         public FolderCategory Category => KnownFolderSettings.Category;
 
-        /// <summary>Gets an value that describes this known folder's behaviors.</summary>
+        /// <summary>Gets a value that describes this known folder's behaviors.</summary>
         /// <value>A <see cref="DefinitionOptions"/> value.</value>
         public DefinitionOptions DefinitionOptions => KnownFolderSettings.DefinitionOptions;
 
@@ -132,7 +132,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
                     Debug.Assert(knownFolderNative != null);
                 }
 
-                // If this is the first time this property is being called, get the native Folder Defination (KnownFolder properties)
+                // If this is the first time this property is being called, get the native Folder Definition (KnownFolder properties)
                 if (knownFolderSettings == null)
                 {
                     knownFolderSettings = new KnownFolderSettings(knownFolderNative);
@@ -143,7 +143,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         }
 
         /// <summary>Release resources</summary>
-        /// <param name="disposing">Indicates that this mothod is being called from Dispose() rather than the finalizer.</param>
+        /// <param name="disposing">Indicates that this method is being called from Dispose() rather than the finalizer.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)

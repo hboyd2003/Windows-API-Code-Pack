@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Diagnostics;
@@ -38,7 +38,7 @@ namespace Microsoft.WindowsAPICodePack.Dialogs.Controls
         /// <summary>Occurs when the user changes the check state.</summary>
         public event EventHandler CheckedChanged = delegate { };
 
-        /// <summary>Gets or sets the state of the check box.</summary>
+        /// <summary>Gets or sets the state of the checkbox.</summary>
         public bool IsChecked
         {
             get => isChecked;

@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell.Resources;
 using MS.WindowsAPICodePack.Internal;
@@ -30,7 +30,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         #region Public Constructors
 
         /// <summary>
-        /// Creates a new StockIcon instance with the specified identifer, default size 
+        /// Creates a new StockIcon instance with the specified identifier, default size 
         /// and no link overlay or selected states.
         /// </summary>
         /// <param name="id">A value that identifies the icon represented by this instance.</param>
@@ -41,7 +41,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         }
 
         /// <summary>
-        /// Creates a new StockIcon instance with the specified identifer and options.
+        /// Creates a new StockIcon instance with the specified identifier and options.
         /// </summary>
         /// <param name="id">A value that identifies the icon represented by this instance.</param>
         /// <param name="size">A value that indicates the size of the stock icon.</param>
@@ -75,7 +75,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         }
 
         /// <summary>
-        /// Gets or sets a value that cotrols whether to put a link overlay on the icon.
+        /// Gets or sets a value that controls whether to put a link overlay on the icon.
         /// </summary>
         /// <value>A <see cref="System.Boolean"/> value.</value>
         public bool LinkOverlay

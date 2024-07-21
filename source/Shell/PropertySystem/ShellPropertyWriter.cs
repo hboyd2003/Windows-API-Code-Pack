@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Runtime.InteropServices;
@@ -67,7 +67,7 @@ public class ShellPropertyWriter : IDisposable
     /// <summary>Call this method to commit the writes (calls to WriteProperty method) and dispose off the writer.</summary>
     public void Close()
     {
-        // Close the property writer (commit, etc)
+        // Close the property writer (commit, etc.)
         if (writablePropStore != null)
         {
             writablePropStore.Commit();

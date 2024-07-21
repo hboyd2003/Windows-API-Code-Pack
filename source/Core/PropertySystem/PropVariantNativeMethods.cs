@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.Runtime.InteropServices;
@@ -108,7 +108,7 @@ internal static class PropVariantNativeMethods
     [DllImport("OleAut32.dll", PreserveSig = true)] // psa is actually returned, not hresult
     internal static extern IntPtr SafeArrayCreateVector(ushort vt, int lowerBound, uint cElems);
 
-    [DllImport("OleAut32.dll", PreserveSig = true)] // retuns uint32
+    [DllImport("OleAut32.dll", PreserveSig = true)] // returns uint32
     internal static extern uint SafeArrayGetDim(IntPtr psa);
 
     // This decl for SafeArrayGetElement is only valid for cDims==1!

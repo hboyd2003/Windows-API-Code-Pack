@@ -39,8 +39,8 @@ public sealed class TaskDialog : IDialogControlHost, IDisposable
     private string detailsExpandedText;
 
     // Dispose pattern - cleans up data and structs for
-    // a) any native dialog currently showing, and
-    // b) anything else that the outer TaskDialog has.
+    // a. any native dialog currently showing, and
+    // b. anything else that the outer TaskDialog has.
     private bool disposed;
 
     private TaskDialogExpandedDetailsLocation expansionMode;
@@ -270,8 +270,8 @@ public sealed class TaskDialog : IDialogControlHost, IDisposable
     }
 
     /// <summary>
-    ///     Gets or sets the progress bar on the taskdialog. ProgressBar a visual representation of the progress of a long
-    ///     running operation.
+    ///     Gets or sets the progress bar on the taskdialog. ProgressBar a visual representation of the progress of a
+    ///     long-running operation.
     /// </summary>
     public TaskDialogProgressBar ProgressBar
     {
@@ -938,7 +938,7 @@ public sealed class TaskDialog : IDialogControlHost, IDisposable
 
             // Show the dialog.
             // NOTE: this is a BLOCKING call; the dialog proc callbacks will be executed by the same thread as the Show() call before the
-            // thread of execution contines to the end of this method.
+            // thread of execution continues to the end of this method.
             nativeDialog = new NativeTaskDialog(settings, this);
             nativeDialog.NativeShow();
 

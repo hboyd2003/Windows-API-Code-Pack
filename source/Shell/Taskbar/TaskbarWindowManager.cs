@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using Microsoft.WindowsAPICodePack.Shell;
 using Microsoft.WindowsAPICodePack.Shell.Resources;
@@ -46,7 +46,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
 
         internal static void AddThumbnailButtons(IntPtr userWindowHandle, params ThumbnailToolBarButton[] buttons)
         {
-            // Try to get an existing taskbar window for this user windowhandle            
+            // Try to get an existing taskbar window for this user window handle            
             var taskbarWindow = GetTaskbarWindow(userWindowHandle, TaskbarProxyWindowType.ThumbnailToolbar);
             TaskbarWindow temp = null;
             try
@@ -194,7 +194,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
 
             var toReturn = _taskbarWindowList.FirstOrDefault(window => window.UserWindowHandle == userWindowHandle);
 
-            // If its not in the list, return null so it can be added.            
+            // If it's not in the list, return null, so it can be added.            
             if (toReturn != null)
             {
                 if (taskbarProxyWindowType == TaskbarProxyWindowType.ThumbnailToolbar)
@@ -330,7 +330,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
                 else
                 {
                     // Else, user didn't want any clipping, if they haven't provided us a bitmap,
-                    // use the screencapture utility and capture it.
+                    // use the screen-capture utility and capture it.
 
                     hBitmap = taskbarWindow.TabbedThumbnail.CurrentHBitmap;
 
@@ -454,7 +454,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
                 }
                 // Else, we don't have a valid window handle from the user. This is mostly likely because
                 // we have a WPF UIElement control. If that's the case, use a different screen capture method
-                // and also couple of ways to try to calculate the control's offset w.r.t it's parent.
+                // and also a couple of ways to try to calculate the control's offset w.r.t it's parent.
                 else if (taskbarWindow.TabbedThumbnail.ParentWindowHandle != IntPtr.Zero &&
                     taskbarWindow.TabbedThumbnail.WindowsControl != null)
                 {
@@ -505,7 +505,7 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
                 else
                 {
                     // Else (no parent specified), just set the bitmap. It would take over the entire 
-                    // application window (would work only if you are a MDI app)
+                    // application window (would work only if you are an MDI app)
 
                     // Only set the peek bitmap if it's not null. 
                     // If it's null (either we didn't get the bitmap or size was 0),
@@ -657,12 +657,12 @@ namespace Microsoft.WindowsAPICodePack.Taskbar
         }
 
         /// <summary>
-        /// Helper function to capture a bitmap for a given window handle or incase of WPF app,
+        /// Helper function to capture a bitmap for a given window handle or in case of WPF app,
         /// an UIElement.
         /// </summary>
         /// <param name="taskbarWindow">The proxy window for which a bitmap needs to be created</param>
         /// <param name="requestedSize">Size for the requested bitmap image</param>
-        /// <returns>Bitmap captured from the window handle or UIElement. Null if the window is hidden or it's size is zero.</returns>
+        /// <returns>Bitmap captured from the window handle or UIElement. Null if the window is hidden, or it's size is zero.</returns>
         private static IntPtr GrabBitmap(TaskbarWindow taskbarWindow, System.Drawing.Size requestedSize)
         {
             var hBitmap = IntPtr.Zero;

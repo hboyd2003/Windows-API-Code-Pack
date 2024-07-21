@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 
 using System;
 using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
@@ -148,7 +148,7 @@ public static class SensorPropertyKeys
     public static readonly PropertyKey SensorDataTypeSatellitesInView =
         new(new Guid(0X055C74D8, 0XCA6F, 0X47D6, 0X95, 0XC6, 0X1E, 0XD3, 0X63, 0X7A, 0X0F, 0XF4), 17);
 
-    /// <summary>The sensor azimuth value for satelites in view property key.</summary>
+    /// <summary>The sensor azimuth value for satellites in view property key.</summary>
     public static readonly PropertyKey SensorDataTypeSatellitesInViewAzimuth =
         new(new Guid(0X055C74D8, 0XCA6F, 0X47D6, 0X95, 0XC6, 0X1E, 0XD3, 0X63, 0X7A, 0X0F, 0XF4), 20);
 
@@ -160,15 +160,15 @@ public static class SensorPropertyKeys
     public static readonly PropertyKey SensorDataTypeSatellitesInViewPrns =
         new(new Guid(0X055C74D8, 0XCA6F, 0X47D6, 0X95, 0XC6, 0X1E, 0XD3, 0X63, 0X7A, 0X0F, 0XF4), 18);
 
-    /// <summary>The sensor signal to noise ratio for satelites in view property key.</summary>
+    /// <summary>The sensor signal-to-noise ratio for satellites in view property key.</summary>
     public static readonly PropertyKey SensorDataTypeSatellitesInViewStnRatio =
         new(new Guid(0X055C74D8, 0XCA6F, 0X47D6, 0X95, 0XC6, 0X1E, 0XD3, 0X63, 0X7A, 0X0F, 0XF4), 21);
 
-    /// <summary>The sensor number of satelites used property key.</summary>
+    /// <summary>The sensor number of satellites used property key.</summary>
     public static readonly PropertyKey SensorDataTypeSatellitesUsedCount =
         new(new Guid(0X055C74D8, 0XCA6F, 0X47D6, 0X95, 0XC6, 0X1E, 0XD3, 0X63, 0X7A, 0X0F, 0XF4), 15);
 
-    /// <summary>The sensor number of satelites used property key.</summary>
+    /// <summary>The sensor number of satellites used property key.</summary>
     public static readonly PropertyKey SensorDataTypeSatellitesUsedPrns =
         new(new Guid(0X055C74D8, 0XCA6F, 0X47D6, 0X95, 0XC6, 0X1E, 0XD3, 0X63, 0X7A, 0X0F, 0XF4), 16);
 

@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 namespace Microsoft.WindowsAPICodePack.Shell
 {
@@ -118,7 +118,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// </summary>
         SlowFile = 30,
         /// <summary>
-        ///  Icon for a empty recycle bin.
+        ///  Icon for an empty recycle bin.
         /// </summary>
         Recycler = 31,
         /// <summary>
@@ -134,7 +134,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// </summary>
         Lock = 47,
         /// <summary>
-        ///  Icon for a auto list.
+        ///  Icon for an auto list.
         /// </summary>
         AutoList = 49,
         /// <summary>
@@ -405,7 +405,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         MediaBluRayR = 138,
 
         /// <summary>
-        /// Icon for BluRay RE Media (Rewriable and RAM)
+        /// Icon for BluRay RE Media (Rewritable and RAM)
         /// </summary>
         MediaBluRayRE = 139,
 

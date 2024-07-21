@@ -42,7 +42,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <summary>Implements the != (unequality) operator.</summary>
         /// <param name="col1">First object to compare.</param>
         /// <param name="col2">Second object to compare.</param>
-        /// <returns>True if col1 does not equals col1; false otherwise.</returns>
+        /// <returns>True if col1 does not equal col1; false otherwise.</returns>
         public static bool operator !=(SortColumn col1, SortColumn col2) => !(col1 == col2);
 
         /// <summary>Determines if this object is equal to another.</summary>

@@ -1,4 +1,4 @@
-﻿using MS.WindowsAPICodePack.Internal;
+using MS.WindowsAPICodePack.Internal;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -70,7 +70,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
             ResetAeroGlass();
         }
 
-        /// <summary>Overide OnPaint to paint the background as black.</summary>
+        /// <summary>Override OnPaint to paint the background as black.</summary>
         /// <param name="e">PaintEventArgs</param>
         protected override void OnPaint(PaintEventArgs e)
         {

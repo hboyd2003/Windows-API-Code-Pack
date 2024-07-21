@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 
 using System;
 using System.Collections.Generic;
@@ -44,7 +44,7 @@ public struct DataFieldInfo : IEquatable<DataFieldInfo>
 
     /// <summary>DataFieldInfo != operator overload</summary>
     /// <param name="first">The first item to compare.</param>
-    /// <param name="second">The second item to comare.</param>
+    /// <param name="second">The second item to compare.</param>
     /// <returns><b>true</b> if not equal; otherwise <b>false</b>.</returns>
     public static bool operator !=(DataFieldInfo first, DataFieldInfo second)
     {

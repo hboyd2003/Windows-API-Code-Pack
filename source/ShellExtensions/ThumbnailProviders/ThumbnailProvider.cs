@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Globalization;
@@ -68,7 +68,7 @@ public abstract class ThumbnailProvider : IThumbnailProvider, ICustomQueryInterf
     {
         ppv = IntPtr.Zero;
 
-        // Forces COM to not use the managed (free threaded) marshaler
+        // Forces COM to not use the managed (free threaded) marshaller
         if (iid == HandlerNativeMethods.IMarshalGuid) return CustomQueryInterfaceResult.Failed;
 
         if ((iid == HandlerNativeMethods.IInitializeWithStreamGuid && !(this is IThumbnailFromStream))
@@ -129,7 +129,7 @@ public abstract class ThumbnailProvider : IThumbnailProvider, ICustomQueryInterf
         return ThumbnailAlphaType.Unknown;
     }
 
-    /// <summary>Disploses the thumbnail provider.</summary>
+    /// <summary>Disposes the thumbnail provider.</summary>
     /// <param name="disposing"></param>
     protected virtual void Dispose(bool disposing)
     {

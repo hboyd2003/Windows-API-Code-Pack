@@ -5,7 +5,7 @@ using Microsoft.WindowsAPICodePack.Resources;
 
 namespace Microsoft.WindowsAPICodePack.Dialogs;
 
-/// <summary>Provides a visual representation of the progress of a long running operation.</summary>
+/// <summary>Provides a visual representation of the progress of a long-running operation.</summary>
 public class TaskDialogProgressBar : TaskDialogBar
 {
     private int _maximum = TaskDialogDefaults.ProgressBarMaximumValue;

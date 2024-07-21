@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 namespace Microsoft.WindowsAPICodePack.Shell
 {
@@ -46,7 +46,7 @@ namespace Microsoft.WindowsAPICodePack.Shell
         /// <summary>The view is not specified.</summary>
         Unspecified = -1,
 
-        /// <summary>This should have the same affect as Unspecified.</summary>
+        /// <summary>This should have the same effect as Unspecified.</summary>
         None = 0,
 
         /// <summary>The minimum valid enumeration value. Used for validation purposes only.</summary>

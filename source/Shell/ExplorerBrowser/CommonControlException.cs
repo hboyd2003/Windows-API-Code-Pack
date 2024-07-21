@@ -12,7 +12,7 @@ public class CommonControlException : COMException
     {
     }
 
-    /// <summary>Initializes an excpetion with a custom message.</summary>
+    /// <summary>Initializes an exception with a custom message.</summary>
     /// <param name="message"></param>
     public CommonControlException(string message) : base(message)
     {
