@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.Serialization;
 
 /* Unmerged change from project 'Core (netcoreapp3.0)'
@@ -31,7 +31,6 @@ using System.Text;
 namespace Microsoft.WindowsAPICodePack.ApplicationServices;
 
 /// <summary>This exception is thrown when there are problems with getting piece of data within PowerManager.</summary>
-[Serializable]
 public class PowerManagerException : Exception
 {
     /// <summary>Default constructor.</summary>
@@ -50,16 +49,6 @@ public class PowerManagerException : Exception
     /// <param name="innerException">An inner exception on which to base this exception.</param>
     public PowerManagerException(string message, Exception innerException)
         : base(message, innerException)
-    {
-    }
-
-    /// <summary>Initializes an exception from serialization info and a context.</summary>
-    /// <param name="info">SerializationInfo for the exception.</param>
-    /// <param name="context">StreamingContext for the exception.</param>
-    protected PowerManagerException(
-        SerializationInfo info,
-        StreamingContext context)
-        : base(info, context)
     {
     }
 }

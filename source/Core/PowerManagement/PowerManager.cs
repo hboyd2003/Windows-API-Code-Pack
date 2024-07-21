@@ -1,4 +1,4 @@
-﻿//Copyright (c) Microsoft Corporation.  All rights reserved.
+//Copyright (c) Microsoft Corporation.  All rights reserved.
 
 using System;
 using System.ComponentModel;
@@ -131,7 +131,9 @@ public static class PowerManager
             CoreHelpers.ThrowIfNotXP();
             return monitorRequired;
         }
-        [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
+        // CAS is obsolete; see https://learn.microsoft.com/en-us/dotnet/fundamentals/syslib-diagnostics/syslib0003
+        // Any security demands will succeed a  without replacement based on recommendation at bottom of ^
+        // [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
         set
         {
             CoreHelpers.ThrowIfNotXP();
@@ -201,7 +203,9 @@ public static class PowerManager
 
             return requestBlockSleep;
         }
-        [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
+        // CAS is obsolete; see https://learn.microsoft.com/en-us/dotnet/fundamentals/syslib-diagnostics/syslib0003
+        // Any security demands will succeed a  without replacement based on recommendation at bottom of ^
+        // [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
         set
         {
             CoreHelpers.ThrowIfNotXP();

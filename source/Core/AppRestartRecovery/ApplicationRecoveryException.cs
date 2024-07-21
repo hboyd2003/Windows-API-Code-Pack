@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 
@@ -8,7 +8,6 @@ namespace Microsoft.WindowsAPICodePack.ApplicationServices;
 ///     This exception is thrown when there are problems with registering, unregistering or updating applications using
 ///     Application Restart Recovery.
 /// </summary>
-[Serializable]
 public class ApplicationRecoveryException : ExternalException
 {
     /// <summary>Default constructor.</summary>
@@ -36,16 +35,5 @@ public class ApplicationRecoveryException : ExternalException
     /// <param name="errorCode">An error code (hresult) from which to generate the exception.</param>
     public ApplicationRecoveryException(string message, int errorCode) : base(message, errorCode)
     {
-    }
-
-    /// <summary>Initializes an exception from serialization info and a context.</summary>
-    /// <param name="info">Serialization info from which to create exception.</param>
-    /// <param name="context">Streaming context from which to create exception.</param>
-    protected ApplicationRecoveryException(
-        SerializationInfo info,
-        StreamingContext context)
-        : base(info, context)
-    {
-        // Empty
     }
 }

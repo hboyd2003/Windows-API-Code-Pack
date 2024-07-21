@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -14,7 +14,6 @@ namespace Microsoft.WindowsAPICodePack.Dialogs;
 ///     visual theming at the
 ///     beginning of a scope, and have it automatically deactivated when the scope is exited.
 /// </devdoc>
-[SuppressUnmanagedCodeSecurity]
 internal class EnableThemingInScope : IDisposable
 {
     private const int ACTCTX_FLAG_ASSEMBLY_DIRECTORY_VALID = 0x004;
@@ -71,46 +70,51 @@ internal class EnableThemingInScope : IDisposable
 
                 string assemblyLoc = null;
 
-                var fiop = new FileIOPermission(PermissionState.None)
+                // CAS is obsolete; see https://learn.microsoft.com/en-us/dotnet/fundamentals/syslib-diagnostics/syslib0003
+                // Removed without replacement based on recommendation at bottom of ^
+                //var fiop = new FileIOPermission(PermissionState.None)
+                //{
+                //    AllFiles = FileIOPermissionAccess.PathDiscovery
+                //};
+                //fiop.Assert();
+                //try
+                //{
+                //    assemblyLoc = typeof(object).Assembly.Location;
+                //}
+                //finally
+                //{
+                //    CodeAccessPermission.RevertAssert();
+                //}
+
+                //string manifestLoc = null;
+                //string installDir = null;
+                //if (assemblyLoc != null)
+                //{
+                //    installDir = Path.GetDirectoryName(assemblyLoc);
+                //    const string manifestName = "XPThemes.manifest";
+                //    manifestLoc = Path.Combine(installDir, manifestName);
+                //}
+
+                string installDir = Path.GetDirectoryName(assemblyLoc);
+                string manifestLoc = Path.Combine(installDir, "XPThemes.manifest"); ;
+
+
+                // if (manifestLoc != null && installDir != null)
+
+                enableThemingActivationContext = new ACTCTX
                 {
-                    AllFiles = FileIOPermissionAccess.PathDiscovery
+                    cbSize = Marshal.SizeOf(typeof(ACTCTX)),
+                    lpSource = manifestLoc,
+
+                    // Set the lpAssemblyDirectory to the install directory to prevent Win32 Side by Side from looking for comctl32
+                    // in the application directory, which could cause a bogus dll to be placed there and open a security hole.
+                    lpAssemblyDirectory = installDir,
+                    dwFlags = ACTCTX_FLAG_ASSEMBLY_DIRECTORY_VALID
                 };
-                fiop.Assert();
-                try
-                {
-                    assemblyLoc = typeof(object).Assembly.Location;
-                }
-                finally
-                {
-                    CodeAccessPermission.RevertAssert();
-                }
 
-                string manifestLoc = null;
-                string installDir = null;
-                if (assemblyLoc != null)
-                {
-                    installDir = Path.GetDirectoryName(assemblyLoc);
-                    const string manifestName = "XPThemes.manifest";
-                    manifestLoc = Path.Combine(installDir, manifestName);
-                }
-
-                if (manifestLoc != null && installDir != null)
-                {
-                    enableThemingActivationContext = new ACTCTX
-                    {
-                        cbSize = Marshal.SizeOf(typeof(ACTCTX)),
-                        lpSource = manifestLoc,
-
-                        // Set the lpAssemblyDirectory to the install directory to prevent Win32 Side by Side from looking for comctl32
-                        // in the application directory, which could cause a bogus dll to be placed there and open a security hole.
-                        lpAssemblyDirectory = installDir,
-                        dwFlags = ACTCTX_FLAG_ASSEMBLY_DIRECTORY_VALID
-                    };
-
-                    // Note this will fail gracefully if file specified by manifestLoc doesn't exist.
-                    hActCtx = CreateActCtx(ref enableThemingActivationContext);
-                    contextCreationSucceeded = hActCtx != new IntPtr(-1);
-                }
+                // Note this will fail gracefully if file specified by manifestLoc doesn't exist.
+                hActCtx = CreateActCtx(ref enableThemingActivationContext);
+                contextCreationSucceeded = hActCtx != new IntPtr(-1);
             }
 
             // If we return false, we'll try again on the next call into EnsureActivateContextCreated(), which is fine.

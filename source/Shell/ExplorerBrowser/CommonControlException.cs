@@ -1,11 +1,10 @@
-﻿using MS.WindowsAPICodePack.Internal;
+using MS.WindowsAPICodePack.Internal;
 using System;
 using System.Runtime.InteropServices;
 
 namespace Microsoft.WindowsAPICodePack.Controls
 {
     /// <summary>An exception thrown when an error occurs while dealing with Control objects.</summary>
-    [Serializable]
     public class CommonControlException : COMException
     {
         /// <summary>Default constructor.</summary>
@@ -33,14 +32,5 @@ namespace Microsoft.WindowsAPICodePack.Controls
         /// <param name="errorCode"></param>
         internal CommonControlException(string message, HResult errorCode) : this(message, (int)errorCode) { }
 
-        /// <summary>Initializes an exception from serialization info and a context.</summary>
-        /// <param name="info"></param>
-        /// <param name="context"></param>
-        protected CommonControlException(
-            System.Runtime.Serialization.SerializationInfo info,
-            System.Runtime.Serialization.StreamingContext context)
-            : base(info, context)
-        {
-        }
     }
 }

@@ -13,7 +13,6 @@ namespace Microsoft.WindowsAPICodePack.ExtendedLinguisticServices;
 ///     to fail. Please
 ///     note that other .NET exceptions are also possible to be thrown from the ELS managed wrappers.
 /// </summary>
-[Serializable]
 public class LinguisticException : Win32Exception
 {
     internal const uint Fail = 0x80004005;
@@ -57,24 +56,6 @@ public class LinguisticException : Win32Exception
         : base((int)hResult)
     {
         HResult = (int)hResult;
-    }
-
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="LinguisticException">LinguisticException</see> class with the
-    ///     specified context and
-    ///     the serialization information.
-    /// </summary>
-    /// <param name="info">
-    ///     The <see cref="System.Runtime.Serialization.SerializationInfo">SerializationInfo</see> associated with this
-    ///     exception.
-    /// </param>
-    /// <param name="context">
-    ///     A <see cref="System.Runtime.Serialization.StreamingContext">StreamingContext</see> that represents the context of
-    ///     this exception.
-    /// </param>
-    protected LinguisticException(SerializationInfo info, StreamingContext context)
-        : base(info, context)
-    {
     }
 
     /// <summary>Gets the MappingResultState describing the error condition for this exception.</summary>

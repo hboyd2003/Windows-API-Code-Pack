@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 
 namespace Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 
 /// <summary>An exception thrown when an error occurs while dealing with the Property System API.</summary>
-[Serializable]
 public class PropertySystemException : ExternalException
 {
     /// <summary>Default constructor.</summary>
@@ -31,16 +30,6 @@ public class PropertySystemException : ExternalException
     /// <param name="message"></param>
     /// <param name="errorCode"></param>
     public PropertySystemException(string message, int errorCode) : base(message, errorCode)
-    {
-    }
-
-    /// <summary>Initializes an exception from serialization info and a context.</summary>
-    /// <param name="info"></param>
-    /// <param name="context"></param>
-    protected PropertySystemException(
-        SerializationInfo info,
-        StreamingContext context)
-        : base(info, context)
     {
     }
 }
